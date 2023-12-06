@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite parallel="false" name="NopCommerce - User">
+
+	<listeners>
+		<listener class-name="reportConfig.ExtentTestListenerV5" />
+	</listeners>
+
+	<parameter name="urlAdmin" value="https://admin-demo.nopcommerce.com/login?ReturnUrl=/admin/" />
+	<parameter name="urlUser" value="https://demo.nopcommerce.com/" />
+
+	<test name="Run on Firefox">
+		<parameter name="browser" value="firefox" />
+
+		<packages>
+			<package name="com.nopcommerce.admin" />
+			<package name="com.nopcommerce.user" />
+		</packages>
+
+	</test>
+</suite> 
