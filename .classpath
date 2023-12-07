@@ -42,8 +42,8 @@
 	<classpathentry kind="lib" path="libraries/libExtentV5/reactive-streams-1.0.3.jar"/>
 	<classpathentry kind="lib" path="libraries/libExtentV5/rxjava-3.0.4.jar"/>
 	<classpathentry kind="lib" path="libraries/libSelenium/joda-time-2.0.jar"/>
-	<classpathentry kind="lib" path="libraries/libLog4j/commons-codec-1.11.jar"/>
-	<classpathentry kind="lib" path="libraries/libLog4j/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="libraries/libLog4j/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="libraries/libFaker/generex-1.0.2.jar"/>
+	<classpathentry kind="lib" path="libraries/libFaker/javafaker-1.0.1.jar"/>
+	<classpathentry kind="lib" path="libraries/libFaker/snakeyaml-1.23.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
