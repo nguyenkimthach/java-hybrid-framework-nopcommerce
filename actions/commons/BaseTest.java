@@ -87,6 +87,32 @@ public class BaseTest {
 		return this.driver;
 	}
 
+	protected String getEnvironmentUrl(String serverName) {
+		String envUrl = null;
+		EnvironmentList environment = EnvironmentList.valueOf(serverName.toUpperCase());
+		switch (environment) {
+		case DEV:
+			envUrl = "https://demo.nopcommerce.com/";
+			break;
+		case TESTING:
+			envUrl = "https://testing.nopcommerce.com/";
+			break;
+		case STAGING:
+			envUrl = "https://staging.nopcommerce.com/";
+			break;
+		case PRE_PROD:
+			envUrl = "https://pre-prod.nopcommerce.com/";
+			break;
+		case PROD:
+			envUrl = "https://prod.nopcommerce.com/";
+			break;
+		default:
+			envUrl = null;
+			break;
+		}
+		return envUrl;
+	}
+
 	public static long getRandomNumberByDateTime() {
 		return Calendar.getInstance().getTimeInMillis() % 100000;
 	}
