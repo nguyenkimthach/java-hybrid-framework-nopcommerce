@@ -64,7 +64,7 @@ public class BasePage {
 	}
 
 	public Alert waitForAlertPresence() {
-		WebDriverWait explicitwait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitwait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		return explicitwait.until(ExpectedConditions.alertIsPresent());
 	}
 
@@ -162,11 +162,23 @@ public class BasePage {
 	}
 
 	public void clickToElement(String locatorType) {
-		getWebElement(locatorType).click();
+		WebElement element = driver.findElement(getByLocator(locatorType));
+		if (driver.toString().contains("internet explorer")) {
+			clickToElementByJS(locatorType);
+			sleepInSecond(3);
+		} else {
+			element.click();
+		}
 	}
 
 	public void clickToElement(String locatorType, String... dynamicValues) {
-		getWebElement(getDynamicXpath(locatorType, dynamicValues)).click();
+		WebElement element = driver.findElement(getByLocator(getDynamicXpath(locatorType, dynamicValues)));
+		if (driver.toString().contains("internet explorer")) {
+			clickToElementByJS(locatorType, dynamicValues);
+			sleepInSecond(3);
+		} else {
+			element.click();
+		}
 	}
 
 	public void senkeyToElement(String locatorType, String textValue) {
@@ -210,7 +222,7 @@ public class BasePage {
 		getWebElement(parentXpath).click();
 		sleepInSecond(1);
 
-		WebDriverWait explicitwait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitwait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		List<WebElement> speeDropdownItems = explicitwait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(childXpath)));
 		;
 		for (WebElement item : speeDropdownItems) {
@@ -305,9 +317,9 @@ public class BasePage {
 	}
 
 	public boolean isElementUndisplayed(String locatorType) {
-		overrideImplicitTimeout(GlobalConstants.SHORT_TIMEOUT);
+		overrideImplicitTimeout(GlobalConstants.getGlobalConstants().getShortTimeOut());
 		List<WebElement> elements = getListWebElement(locatorType);
-		overrideImplicitTimeout(GlobalConstants.LONG_TIMEOUT);
+		overrideImplicitTimeout(GlobalConstants.getGlobalConstants().getLongTimeOut());
 
 		if (elements.size() == 0) {
 			return true;
@@ -319,9 +331,9 @@ public class BasePage {
 	}
 
 	public boolean isElementUndisplayed(String locatorType, String... dynamicValues) {
-		overrideImplicitTimeout(GlobalConstants.SHORT_TIMEOUT);
+		overrideImplicitTimeout(GlobalConstants.getGlobalConstants().getShortTimeOut());
 		List<WebElement> elements = getListWebElement(getDynamicXpath(locatorType, dynamicValues));
-		overrideImplicitTimeout(GlobalConstants.LONG_TIMEOUT);
+		overrideImplicitTimeout(GlobalConstants.getGlobalConstants().getLongTimeOut());
 
 		if (elements.size() == 0) {
 			return true;
@@ -387,6 +399,10 @@ public class BasePage {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", getWebElement(locatorType));
 	}
 
+	public void clickToElementByJS(String locatorType, String... dynamicValues) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", getWebElement(getDynamicXpath(locatorType, dynamicValues)));
+	}
+
 	public void scrollToElement(String locatorType) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getWebElement(locatorType));
 	}
@@ -404,7 +420,7 @@ public class BasePage {
 	}
 
 	public boolean areJQueryAndJSLoadedSuccess() {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
 			@Override
 			public Boolean apply(WebDriver driver) {
@@ -452,27 +468,27 @@ public class BasePage {
 	}
 
 	public void waitForElementVisible(String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locatorType)));
 	}
 
 	public void waitForElementVisible(String locatorType, String... dynamicValues) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
 	public void waitForAllElementVisible(String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(locatorType)));
 	}
 
 	public void waitForAllElementVisible(String locatorType, String... dynamicValues) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
 	public void waitForElementInvisible(String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locatorType)));
 	}
 
@@ -484,35 +500,35 @@ public class BasePage {
 	 * @param locatorType
 	 */
 	public void waitForElementUndisplay(String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.SHORT_TIMEOUT);
-		overrideImplicitTimeout(GlobalConstants.SHORT_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getShortTimeOut());
+		overrideImplicitTimeout(GlobalConstants.getGlobalConstants().getShortTimeOut());
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locatorType)));
-		overrideImplicitTimeout(GlobalConstants.LONG_TIMEOUT);
+		overrideImplicitTimeout(GlobalConstants.getGlobalConstants().getLongTimeOut());
 	}
 
 	public void waitForElementInvisible(String locatorType, String... dynamicValues) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
 	public void waitForAllElementInvisible(String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getListWebElement(locatorType)));
 	}
 
 	public void waitForElementClickable(String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(locatorType)));
 	}
 
 	public void waitForElementClickable(String locatorType, String... dynamicValues) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
 	public void uploadMultipleFiles(String... fileNames) {
 		// Đường dẫn của thư muc Upload file : Windows\ Mac\ Linux
-		String filePath = GlobalConstants.UPLOAD_FILE;
+		String filePath = GlobalConstants.getGlobalConstants().getUploadFile();
 
 		// Đường dẩn của all File
 		String fullFileName = "";
@@ -520,7 +536,7 @@ public class BasePage {
 			fullFileName = fullFileName + filePath + file + "\n";
 		}
 		fullFileName = fullFileName.trim();
-		getWebElement(GlobalConstants.UPLOAD_FILE).sendKeys(fullFileName);
+		getWebElement(BasePageNopCommerceUI.UPLOAD_FILE).sendKeys(fullFileName);
 	}
 
 	/**
