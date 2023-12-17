@@ -35,7 +35,7 @@ public class BaseTest {
 
 	@BeforeSuite
 	public void deleteFileInReport() {
-		deleteAllFileInFolder("extentV5");
+		deleteAllFileInFolder("reportHTML");
 	}
 
 	protected WebDriver getBrowserDriverAll(String envName, String severName, String browserName, String ipAddress, String portNumber, String osName, String osVersion, String browserVersion) {

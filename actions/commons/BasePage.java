@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserRegisterPageObject;
 import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
 
@@ -622,5 +623,11 @@ public class BasePage {
 	public void openPageAtMyAccountByPageName(String pageName) {
 		waitForElementClickable(BasePageNopCommerceUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
 		clickToElement(BasePageNopCommerceUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
+	}
+
+	public UserHomePageObject clickToLogoutLink() {
+		waitForElementClickable(BasePageNopCommerceUI.LOGOUT_LINK);
+		clickToElement(BasePageNopCommerceUI.LOGOUT_LINK);
+		return PageGeneratorManage.getUserHomePage(driver);
 	}
 }

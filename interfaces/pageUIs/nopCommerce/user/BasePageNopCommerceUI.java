@@ -2,6 +2,7 @@ package pageUIs.nopCommerce.user;
 
 public class BasePageNopCommerceUI {
 	public static final String REGISTER_LINK = "https://demo.nopcommerce.com/register/";
+	public static final String LOGOUT_LINK = "css=a.ico-logout";
 	public static final String UPLOAD_FILE = "xpath=//input[@type='file']";
 
 	public static final String DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA = "xpath=//div[contains(@class,'account-navigation')]//a[text()='%s']";

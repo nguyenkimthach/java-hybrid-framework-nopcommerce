@@ -81,7 +81,7 @@ public class UserRegisterPageObject extends BasePage {
 
 	public void inputToCompanyNameTextbox(String companyName) {
 		waitForElementVisible(UserRegisterPageUI.COMPANY_NAME_TEXTBOX);
-		senkeyToElement(UserRegisterPageUI.EMAIL_NAME_TEXTBOX, companyName);
+		senkeyToElement(UserRegisterPageUI.COMPANY_NAME_TEXTBOX, companyName);
 	}
 
 	public void inPutToPasswordTextbox(String password) {
@@ -94,10 +94,25 @@ public class UserRegisterPageObject extends BasePage {
 		senkeyToElement(UserRegisterPageUI.CONFIRM_PASSWORD, confirmPassword);
 	}
 
+	public boolean isRegisterSuccessMessageDisplayed(String message) {
+		waitForElementVisible(UserRegisterPageUI.REGISTER_SUCCESS_MESSAGE_BY_TEXT, message);
+		return isElementDisPlayed(UserRegisterPageUI.REGISTER_SUCCESS_MESSAGE_BY_TEXT, message);
+	}
+
+	public boolean isEmailExistedMessageDisplayed(String message) {
+		waitForElementVisible(UserRegisterPageUI.EMAIL_EXISTED_MESSAGE_BY_TEXT, message);
+		return isElementDisPlayed(UserRegisterPageUI.EMAIL_EXISTED_MESSAGE_BY_TEXT, message);
+	}
+
 	public UserHomePageObject clickToContinueButton() {
 		waitForElementClickable(UserRegisterPageUI.CONTINUE_BUTTON);
 		clickToElement(UserRegisterPageUI.CONTINUE_BUTTON);
 		return PageGeneratorManage.getUserHomePage(driver);
+	}
+
+	public String getTextPasswordErrorMessageDisplay() {
+		waitForElementVisible(UserRegisterPageUI.PASSWORD_ERROR_MESSAGE);
+		return getElementText(UserRegisterPageUI.PASSWORD_ERROR_MESSAGE);
 	}
 
 }

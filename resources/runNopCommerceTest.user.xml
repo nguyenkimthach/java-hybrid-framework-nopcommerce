@@ -5,16 +5,20 @@
 		<listener class-name="reportConfig.ExtentTestListenerV5" />
 	</listeners>
 
-	<parameter name="urlAdmin" value="https://admin-demo.nopcommerce.com/login?ReturnUrl=/admin/" />
-	<parameter name="urlUser" value="https://demo.nopcommerce.com/" />
+<!-- 	<parameter name="urlAdmin" value="https://admin-demo.nopcommerce.com/login?ReturnUrl=/admin/" /> -->
+<!-- 	<parameter name="urlUser" value="https://demo.nopcommerce.com/" /> -->
+	<parameter name="envName" value="local" />
 
 	<test name="Run on Firefox">
 		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.nopcommerce.user.User_01_Register" />
+		</classes>
 
-		<packages>
-			<package name="com.nopcommerce.admin" />
-			<package name="com.nopcommerce.user" />
-		</packages>
+		<!-- <packages> -->
+		<!-- <package name="com.nopcommerce.admin" /> -->
+		<!-- <package name="com.nopcommerce.user" /> -->
+		<!-- </packages> -->
 
 	</test>
 </suite> 
