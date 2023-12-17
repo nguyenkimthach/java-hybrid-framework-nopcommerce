@@ -43,7 +43,7 @@ public class User_01_Register extends BaseTest {
 		invalidEmail = "123@#123@" + validEmail;
 		companyName = dataFaker.getCompanyName();
 		password = "123456";
-		passwordLess6Character = "1111";
+		passwordLess6Character = "11111";
 
 		userRegisterPage = userHomePage.openRegisterPage();
 	}
