@@ -75,8 +75,8 @@ public class UserRegisterPageObject extends BasePage {
 	}
 
 	public void inPutToEmailTextbox(String emailAddress) {
-		waitForElementVisible(UserRegisterPageUI.EMAIL_NAME_TEXTBOX);
-		senkeyToElement(UserRegisterPageUI.EMAIL_NAME_TEXTBOX, emailAddress);
+		waitForElementVisible(UserRegisterPageUI.EMAIL_TEXTBOX);
+		senkeyToElement(UserRegisterPageUI.EMAIL_TEXTBOX, emailAddress);
 	}
 
 	public void inputToCompanyNameTextbox(String companyName) {

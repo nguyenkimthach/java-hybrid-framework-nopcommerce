@@ -3,7 +3,7 @@ package pageUIs.nopCommerce.user;
 public class UserRegisterPageUI {
 	public static final String FIRST_NAME_TEXTBOX = "xpath=//input[@id='FirstName']";
 	public static final String LAST_NAME_TEXTBOX = "xpath=//input[@id='LastName']";
-	public static final String EMAIL_NAME_TEXTBOX = "xpath=//input[@id='Email']";
+	public static final String EMAIL_TEXTBOX = "xpath=//input[@id='Email']";
 	public static final String PASSWORD_TEXTBOX = "xpath=//input[@id='Password']";
 	public static final String CONFIRM_PASSWORD = "xpath=//input[@id='ConfirmPassword']";
 	public static final String COMPANY_NAME_TEXTBOX = "xpath=//input[@id='Company']";

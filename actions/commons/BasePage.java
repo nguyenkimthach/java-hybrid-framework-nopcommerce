@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
 import pageObjects.nopCommerce.user.UserRegisterPageObject;
 import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
 
@@ -618,6 +619,11 @@ public class BasePage {
 	public UserRegisterPageObject openRegisterPage() {
 		openPageUrl(BasePageNopCommerceUI.REGISTER_LINK);
 		return PageGeneratorManage.getUserRegisterPage(driver);
+	}
+
+	public UserLoginPageObject openLoginPage() {
+		openPageUrl(BasePageNopCommerceUI.LOGIN_LINK);
+		return PageGeneratorManage.getUserLoginPage(driver);
 	}
 
 	public void openPageAtMyAccountByPageName(String pageName) {
