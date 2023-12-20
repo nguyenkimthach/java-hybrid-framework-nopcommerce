@@ -86,7 +86,7 @@ public class User_01_Register extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Register_02 - Step 06: Select item in 'Year' dropdown is '" + year + "'");
 		userRegisterPage.selectItemInYearDropdown(year);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Register_02 - Step 07: inPut to 'invalid email' textbox with text is '" + invalidEmail + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "Register_02 - Step 07: inPut to 'Email' textbox with text is '" + invalidEmail + "'");
 		userRegisterPage.inPutToEmailTextbox(invalidEmail);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Register_02 - Step 07: inPut to 'Company name' textbox with text is '" + companyName + "'");
@@ -127,7 +127,7 @@ public class User_01_Register extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Register_03 - Step 06: Select item in 'Year' dropdown is '" + year + "'");
 		userRegisterPage.selectItemInYearDropdown(year);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Register_03 - Step 07: inPut to 'invalid email' textbox with text is '" + validEmail + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "Register_03 - Step 07: inPut to 'Email' textbox with text is '" + validEmail + "'");
 		userRegisterPage.inPutToEmailTextbox(validEmail);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Register_03 - Step 07: inPut to 'Company name' textbox with text is '" + companyName + "'");
@@ -174,7 +174,7 @@ public class User_01_Register extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Register_04 - Step 08: Select item in 'Year' dropdown is '" + year + "'");
 		userRegisterPage.selectItemInYearDropdown(year);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Register_04 - Step 09: inPut to 'invalid email' textbox with text is '" + validEmail + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "Register_04 - Step 09: inPut to 'Email' textbox with text is '" + validEmail + "'");
 		userRegisterPage.inPutToEmailTextbox(validEmail);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Register_04 - Step 10: inPut to 'Company name' textbox with text is '" + companyName + "'");
@@ -215,7 +215,7 @@ public class User_01_Register extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Register_05 - Step 06: Select item in 'Year' dropdown is '" + year + "'");
 		userRegisterPage.selectItemInYearDropdown(year);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Register_05 - Step 07: inPut to 'invalid email' textbox with text is '" + validEmail + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "Register_05 - Step 07: inPut to 'Email' textbox with text is '" + validEmail + "'");
 		userRegisterPage.inPutToEmailTextbox(validEmail);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Register_05 - Step 07: inPut to 'Company name' textbox with text is '" + companyName + "'");
@@ -256,7 +256,7 @@ public class User_01_Register extends BaseTest {
 		ExtentTestManager.getTest().log(Status.INFO, "Register_03 - Step 06: Select item in 'Year' dropdown is '" + year + "'");
 		userRegisterPage.selectItemInYearDropdown(year);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Register_03 - Step 07: inPut to 'invalid email' textbox with text is '" + validEmail + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "Register_03 - Step 07: inPut to 'Email' textbox with text is '" + validEmail + "'");
 		userRegisterPage.inPutToEmailTextbox(validEmail);
 
 		ExtentTestManager.getTest().log(Status.INFO, "Register_03 - Step 07: inPut to 'Company name' textbox with text is '" + companyName + "'");

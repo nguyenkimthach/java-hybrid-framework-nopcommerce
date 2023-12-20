@@ -3,6 +3,7 @@ package pageObjects.nopCommerce.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManage;
 import pageUIs.nopCommerce.user.UserLoginPageUI;
 
 public class UserLoginPageObject extends BasePage {
@@ -13,9 +14,10 @@ public class UserLoginPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public void clickToLoginButton() {
+	public UserHomePageObject clickToLoginButton() {
 		waitForElementClickable(UserLoginPageUI.LOGIN_BUTTON);
 		clickToElement(UserLoginPageUI.LOGIN_BUTTON);
+		return PageGeneratorManage.getUserHomePage(driver);
 	}
 
 	public boolean isEmailErrorMessageDisplay(String erorrMessage) {
@@ -33,4 +35,8 @@ public class UserLoginPageObject extends BasePage {
 		return getElementText(UserLoginPageUI.VALIDATION_SUMMARY_ERROR_MESSAGE);
 	}
 
+	public void inPutToPasswordTextbox(String password) {
+		waitForElementVisible(UserLoginPageUI.PASSWORD_TEXTBOX);
+		senkeyToElement(UserLoginPageUI.PASSWORD_TEXTBOX, password);
+	}
 }

@@ -225,7 +225,7 @@ public class BasePage {
 		sleepInSecond(1);
 
 		WebDriverWait explicitwait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
-		List<WebElement> speeDropdownItems = explicitwait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(childXpath)));
+		List<WebElement> speeDropdownItems = explicitwait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(childXpath)));
 		;
 		for (WebElement item : speeDropdownItems) {
 			if (item.getText().trim().equals(expectedTextItem)) {
@@ -616,6 +616,11 @@ public class BasePage {
 		return getElementAttribute(BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, "value", textboxID);
 	}
 
+	public UserHomePageObject openHomePage() {
+		openPageUrl(BasePageNopCommerceUI.HOMEPAGE_LINK);
+		return PageGeneratorManage.getUserHomePage(driver);
+	}
+
 	public UserRegisterPageObject openRegisterPage() {
 		openPageUrl(BasePageNopCommerceUI.REGISTER_LINK);
 		return PageGeneratorManage.getUserRegisterPage(driver);
@@ -624,11 +629,6 @@ public class BasePage {
 	public UserLoginPageObject openLoginPage() {
 		openPageUrl(BasePageNopCommerceUI.LOGIN_LINK);
 		return PageGeneratorManage.getUserLoginPage(driver);
-	}
-
-	public void openPageAtMyAccountByPageName(String pageName) {
-		waitForElementClickable(BasePageNopCommerceUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
-		clickToElement(BasePageNopCommerceUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
 	}
 
 	public UserHomePageObject clickToLogoutLink() {

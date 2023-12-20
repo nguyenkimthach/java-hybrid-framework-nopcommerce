@@ -25,4 +25,21 @@ public class UserHomePageObject extends BasePage {
 		clickToElement(UserHomePageUI.LOGIN_LINK);
 		return PageGeneratorManage.getUserLoginPage(driver);
 	}
+
+	public boolean isMyaccountLinkDisplayed() {
+		waitForElementVisible(UserHomePageUI.MY_ACCOUNT_LINK);
+		return isElementDisPlayed(UserHomePageUI.MY_ACCOUNT_LINK);
+	}
+
+	public UserMyAccountPageObject clickMyAccountLink() {
+		waitForElementClickable(UserHomePageUI.MY_ACCOUNT_LINK);
+		clickToElement(UserHomePageUI.MY_ACCOUNT_LINK);
+		return PageGeneratorManage.getMyAccountPage(driver);
+	}
+
+	public UserProductPageObject clickToProductAtFeaturedProductsListByText(String productName) {
+		waitForElementClickable(UserHomePageUI.PRODUCT_AT_FEATURED_LIST_BY_TEXT, productName);
+		clickToElement(UserHomePageUI.PRODUCT_AT_FEATURED_LIST_BY_TEXT, productName);
+		return PageGeneratorManage.getUserProductPage(driver);
+	}
 }
