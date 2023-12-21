@@ -636,4 +636,9 @@ public class BasePage {
 		clickToElement(BasePageNopCommerceUI.LOGOUT_LINK);
 		return PageGeneratorManage.getUserHomePage(driver);
 	}
+
+	public void openPageAtFooterByText(String page) {
+		waitForElementClickable(BasePageNopCommerceUI.DYNAMIC_LINK_PAGE_AT_FOOTER_BY_TEXT, page);
+		clickToElement(BasePageNopCommerceUI.DYNAMIC_LINK_PAGE_AT_FOOTER_BY_TEXT, page);
+	}
 }

@@ -12,4 +12,6 @@ public class BasePageNopCommerceUI {
 	public static final String DYNAMIC_DROPDOWN_BY_NAME = "xpath=//select[@name='%s']";
 	public static final String DYNAMIC_RADIO_BUTTON_BY_LABEL = "xpath=//label[text()='%s']/preceding-sibling::input";
 	public static final String DYNAMIC_CHECKBOX_BY_LABEL = "xpath=//label[contains(text(),'%s')]/following-sibling::input";
+
+	public static final String DYNAMIC_LINK_PAGE_AT_FOOTER_BY_TEXT = "xpath=//div[@class='footer-upper']//li/a[text()='%s']";
 }
