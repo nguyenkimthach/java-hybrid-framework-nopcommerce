@@ -26,6 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserLoginPageObject;
 import pageObjects.nopCommerce.user.UserRegisterPageObject;
+import pageObjects.nopCommerce.user.UserWishlistPageObject;
 import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
 
 public class BasePage {
@@ -490,16 +491,6 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
-	protected void waitForAllElementVisible(String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
-		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(locatorType)));
-	}
-
-	protected void waitForAllElementVisible(String locatorType, String... dynamicValues) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
-		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
-	}
-
 	protected void waitForElementInvisible(String locatorType) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getMediumTimeOut());
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locatorType)));
@@ -508,6 +499,16 @@ public class BasePage {
 	protected void waitForElementInvisible(String locatorType, String... dynamicValues) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getMediumTimeOut());
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
+	}
+
+	protected void waitForAllElementVisible(String locatorType) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
+		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(locatorType)));
+	}
+
+	protected void waitForAllElementVisible(String locatorType, String... dynamicValues) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
+		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
 	protected void waitForAllElementInvisible(String locatorType) {
@@ -531,6 +532,20 @@ public class BasePage {
 		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getShortTimeOut());
 		overrideImplicitTimeout(GlobalConstants.getGlobalConstants().getShortTimeOut());
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locatorType)));
+		overrideImplicitTimeout(GlobalConstants.getGlobalConstants().getLongTimeOut());
+	}
+
+	/**
+	 * Wait for dynamic element undisplayed in DOM or not in DOM and override implicit timeout
+	 * 
+	 * @author ThachNk
+	 * @param locatorType
+	 * @param dynamicValues
+	 */
+	protected void waitForElementUndisplay(String locatorType, String... dynamicValues) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getShortTimeOut());
+		overrideImplicitTimeout(GlobalConstants.getGlobalConstants().getShortTimeOut());
+		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 		overrideImplicitTimeout(GlobalConstants.getGlobalConstants().getLongTimeOut());
 	}
 
@@ -706,6 +721,10 @@ public class BasePage {
 		return getElementAttribute(BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, "value", textboxID);
 	}
 
+	public void navigateToPreviousPage() {
+		backToPage();
+	}
+
 	public UserHomePageObject openHomePage() {
 		openPageUrl(BasePageNopCommerceUI.HOMEPAGE_LINK);
 		return PageGeneratorManage.getUserHomePage(driver);
@@ -721,6 +740,11 @@ public class BasePage {
 		return PageGeneratorManage.getUserLoginPage(driver);
 	}
 
+	public UserWishlistPageObject openWishlistPage() {
+		openPageUrl(BasePageNopCommerceUI.WISHLIST_LINK);
+		return PageGeneratorManage.getUserWishlistPage(driver);
+	}
+
 	public UserHomePageObject clickToLogoutLink() {
 		waitForElementClickable(BasePageNopCommerceUI.LOGOUT_LINK);
 		clickToElement(BasePageNopCommerceUI.LOGOUT_LINK);
@@ -730,5 +754,10 @@ public class BasePage {
 	public void openPageAtFooterByText(String page) {
 		waitForElementClickable(BasePageNopCommerceUI.DYNAMIC_LINK_PAGE_AT_FOOTER_BY_TEXT, page);
 		clickToElement(BasePageNopCommerceUI.DYNAMIC_LINK_PAGE_AT_FOOTER_BY_TEXT, page);
+	}
+
+	public String getContenMessage() {
+		waitForElementVisible(BasePageNopCommerceUI.CONTEN_MESSAGE);
+		return getElementText(BasePageNopCommerceUI.CONTEN_MESSAGE);
 	}
 }

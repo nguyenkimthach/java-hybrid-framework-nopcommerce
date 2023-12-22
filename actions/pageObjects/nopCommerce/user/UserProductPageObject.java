@@ -19,4 +19,9 @@ public class UserProductPageObject extends BasePage {
 		clickToElement(UserProductPageUI.ADD_REVIEW_LINK);
 		return PageGeneratorManage.getUserProductReviewPage(driver);
 	}
+
+	public void clickToButtonOverViewByTextName(String textName) {
+		waitForElementClickable(UserProductPageUI.BUTTON_OVERVIEW_BY_TEXT, textName);
+		clickToElement(UserProductPageUI.BUTTON_OVERVIEW_BY_TEXT, textName);
+	}
 }

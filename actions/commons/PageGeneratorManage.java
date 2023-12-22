@@ -2,14 +2,18 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
+import pageObjects.nopCommerce.user.UserComparePageObject;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserLoginPageObject;
 import pageObjects.nopCommerce.user.UserMyAccountPageObject;
-import pageObjects.nopCommerce.user.UserNoteBookPageObject;
+import pageObjects.nopCommerce.user.UserNotebookPageObject;
 import pageObjects.nopCommerce.user.UserProductPageObject;
 import pageObjects.nopCommerce.user.UserProductReviewPageObject;
+import pageObjects.nopCommerce.user.UserRecentlyViewedPageObject;
 import pageObjects.nopCommerce.user.UserRegisterPageObject;
 import pageObjects.nopCommerce.user.UserSearchPageObject;
+import pageObjects.nopCommerce.user.UserShoppingCartPageObject;
+import pageObjects.nopCommerce.user.UserWishlistPageObject;
 
 public class PageGeneratorManage {
 
@@ -41,7 +45,23 @@ public class PageGeneratorManage {
 		return new UserSearchPageObject(driver);
 	}
 
-	public static UserNoteBookPageObject getUserNoteBookPage(WebDriver driver) {
-		return new UserNoteBookPageObject(driver);
+	public static UserNotebookPageObject getUserNotebookPage(WebDriver driver) {
+		return new UserNotebookPageObject(driver);
+	}
+
+	public static UserWishlistPageObject getUserWishlistPage(WebDriver driver) {
+		return new UserWishlistPageObject(driver);
+	}
+
+	public static UserShoppingCartPageObject getUserShoppingCartPage(WebDriver driver) {
+		return new UserShoppingCartPageObject(driver);
+	}
+
+	public static UserRecentlyViewedPageObject getUsergetUserShoppingCartPagePage(WebDriver driver) {
+		return new UserRecentlyViewedPageObject(driver);
+	}
+
+	public static UserComparePageObject getUserComparePage(WebDriver driver) {
+		return new UserComparePageObject(driver);
 	}
 }
