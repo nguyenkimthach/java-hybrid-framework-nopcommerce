@@ -13,7 +13,7 @@
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.nopcommerce.common.Common_01_Register_End_User" />
-			<class name="com.nopcommerce.user.User_04_Search_And_Advance_Search" />
+			<class name="com.nopcommerce.user.User_05_Sort_Display_Paging" />
 		</classes>
 
 		<!-- <packages> -->

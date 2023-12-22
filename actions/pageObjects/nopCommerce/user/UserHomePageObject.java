@@ -42,4 +42,12 @@ public class UserHomePageObject extends BasePage {
 		clickToElement(UserHomePageUI.PRODUCT_AT_FEATURED_LIST_BY_TEXT, productName);
 		return PageGeneratorManage.getUserProductPage(driver);
 	}
+
+	public void openSubmenuPageAtHeaderMenuByName(String headerMenuName, String subMenuName) {
+		waitForElementVisible(UserHomePageUI.HEADER_MENU_BY_TEXT, headerMenuName);
+		hoverMouseToElement(UserHomePageUI.HEADER_MENU_BY_TEXT, headerMenuName);
+
+		waitForElementClickable(UserHomePageUI.SUBMENU_AT_HEADER_MENU_BY_TEXT, headerMenuName, subMenuName);
+		clickToElement(UserHomePageUI.SUBMENU_AT_HEADER_MENU_BY_TEXT, headerMenuName, subMenuName);
+	}
 }

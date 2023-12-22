@@ -52,6 +52,7 @@ public class GlobalConstants {
 	private final String crossbrowserUrl = "https://eu-desktop-hub.bitbar.com/wd/hub";
 
 	private final long shortTimeOut = 5;
+	private final long mediumTimeOut = 15;
 	private final long longTimeOut = 30;
 	private final long retryTestFail = 3;
 }

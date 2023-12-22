@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserLoginPageObject;
 import pageObjects.nopCommerce.user.UserMyAccountPageObject;
+import pageObjects.nopCommerce.user.UserNoteBookPageObject;
 import pageObjects.nopCommerce.user.UserProductPageObject;
 import pageObjects.nopCommerce.user.UserProductReviewPageObject;
 import pageObjects.nopCommerce.user.UserRegisterPageObject;
@@ -38,5 +39,9 @@ public class PageGeneratorManage {
 
 	public static UserSearchPageObject getUserSearchPage(WebDriver driver) {
 		return new UserSearchPageObject(driver);
+	}
+
+	public static UserNoteBookPageObject getUserNoteBookPage(WebDriver driver) {
+		return new UserNoteBookPageObject(driver);
 	}
 }
