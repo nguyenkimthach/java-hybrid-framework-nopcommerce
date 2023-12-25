@@ -31,12 +31,6 @@ public class UserHomePageObject extends BasePage {
 		return isElementDisPlayed(UserHomePageUI.MY_ACCOUNT_LINK);
 	}
 
-	public UserMyAccountPageObject clickMyAccountLink() {
-		waitForElementClickable(UserHomePageUI.MY_ACCOUNT_LINK);
-		clickToElement(UserHomePageUI.MY_ACCOUNT_LINK);
-		return PageGeneratorManage.getMyAccountPage(driver);
-	}
-
 	public UserProductPageObject clickToProductAtFeaturedProductsListByText(String productName) {
 		waitForElementClickable(UserHomePageUI.PRODUCT_AT_FEATURED_LIST_BY_TEXT, productName);
 		clickToElement(UserHomePageUI.PRODUCT_AT_FEATURED_LIST_BY_TEXT, productName);

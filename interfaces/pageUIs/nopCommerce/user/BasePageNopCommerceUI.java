@@ -6,6 +6,7 @@ public class BasePageNopCommerceUI {
 	public static final String LOGIN_LINK = "https://demo.nopcommerce.com/login/";
 	public static final String WISHLIST_LINK = "https://demo.nopcommerce.com/wishlist/";
 	public static final String LOGOUT_LINK = "css=a.ico-logout";
+	public static final String MY_ACCOUNT_LINK = "css= a.ico-account";
 	public static final String CONTEN_MESSAGE = "css=p.content";
 	public static final String UPLOAD_FILE = "xpath=//input[@type='file']";
 

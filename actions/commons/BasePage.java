@@ -25,6 +25,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserMyAccountPageObject;
 import pageObjects.nopCommerce.user.UserRegisterPageObject;
 import pageObjects.nopCommerce.user.UserWishlistPageObject;
 import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
@@ -195,15 +196,31 @@ public class BasePage {
 		element.sendKeys(textValue);
 	}
 
-	protected void clearValueInElementByDeleteKey(String locatorType) {
-		WebElement element = getWebElement(locatorType);
-		element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-	}
-
 	protected void senkeyToElement(String locatorType, String textValue, String... dynamicValues) {
 		WebElement element = getWebElement(getDynamicXpath(locatorType, dynamicValues));
 		element.clear();
 		element.sendKeys(textValue);
+	}
+
+	protected void senkeyToElementUserClearByDeleteKey(String locatorType, String textValue) {
+		WebElement element = getWebElement(locatorType);
+		waitForElementClickable(locatorType);
+		clickToElement(locatorType);
+		clearValueInElementByDeleteKey(locatorType);
+		element.sendKeys(textValue);
+	}
+
+	protected void senkeyToElementUserClearByDeleteKey(String locatorType, String textValue, String... dynamicValues) {
+		WebElement element = getWebElement(getDynamicXpath(locatorType, dynamicValues));
+		waitForElementClickable(getDynamicXpath(locatorType, dynamicValues));
+		clickToElement(getDynamicXpath(locatorType, dynamicValues));
+		clearValueInElementByDeleteKey(getDynamicXpath(locatorType, dynamicValues));
+		element.sendKeys(textValue);
+	}
+
+	protected void clearValueInElementByDeleteKey(String locatorType) {
+		WebElement element = getWebElement(locatorType);
+		element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 	}
 
 	protected void selectItemInDefaultDropDown(String locatorType, String textItem) {
@@ -666,7 +683,7 @@ public class BasePage {
 	 * @param driver
 	 * @param buttonText
 	 */
-	public void clickTobuttonByText(String buttonText) {
+	public void clickToButtonByText(String buttonText) {
 		waitForElementClickable(BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
 		clickToElement(BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
 	}
@@ -749,6 +766,12 @@ public class BasePage {
 		waitForElementClickable(BasePageNopCommerceUI.LOGOUT_LINK);
 		clickToElement(BasePageNopCommerceUI.LOGOUT_LINK);
 		return PageGeneratorManage.getUserHomePage(driver);
+	}
+
+	public UserMyAccountPageObject clickMyAccountLink() {
+		waitForElementClickable(BasePageNopCommerceUI.MY_ACCOUNT_LINK);
+		clickToElement(BasePageNopCommerceUI.MY_ACCOUNT_LINK);
+		return PageGeneratorManage.getMyAccountPage(driver);
 	}
 
 	public void openPageAtFooterByText(String page) {

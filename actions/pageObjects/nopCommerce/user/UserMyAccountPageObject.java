@@ -3,6 +3,7 @@ package pageObjects.nopCommerce.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManage;
 import pageUIs.nopCommerce.user.UserMyAccountPageUI;
 
 public class UserMyAccountPageObject extends BasePage {
@@ -151,5 +152,16 @@ public class UserMyAccountPageObject extends BasePage {
 	public void clickToChangePasswordButton() {
 		waitForElementClickable(UserMyAccountPageUI.CHANGE_PASSWORD_BUTTON);
 		clickToElement(UserMyAccountPageUI.CHANGE_PASSWORD_BUTTON);
+	}
+
+	public boolean isOrderNumberBytextDisplayed(String textOrderNumber) {
+		waitForElementVisible(UserMyAccountPageUI.ORDER_NUMBER_BY_TEXT, textOrderNumber);
+		return isElementDisPlayed(UserMyAccountPageUI.ORDER_NUMBER_BY_TEXT, textOrderNumber);
+	}
+
+	public UserOrderInformationPageObject clickToDetailsButtonByOrderNumber(String orderNumber) {
+		waitForElementClickable(UserMyAccountPageUI.DETAILS_BUTTON_BY_ORDER_NUMBER, orderNumber);
+		clickToElement(UserMyAccountPageUI.DETAILS_BUTTON_BY_ORDER_NUMBER, orderNumber);
+		return PageGeneratorManage.getUserOrderInformationPage(driver);
 	}
 }

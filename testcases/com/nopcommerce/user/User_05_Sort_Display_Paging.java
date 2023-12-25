@@ -18,7 +18,7 @@ import commons.BaseTest;
 import commons.PageGeneratorManage;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserLoginPageObject;
-import pageObjects.nopCommerce.user.UserNotebookPageObject;
+import pageObjects.nopCommerce.user.UserComputerPageObject;
 import reportConfig.ExtentTestManager;
 import utilities.SeverName;
 
@@ -40,7 +40,7 @@ public class User_05_Sort_Display_Paging extends BaseTest {
 		userHomePage = userLoginPage.clickToLoginButton();
 
 		userHomePage.openSubmenuPageAtHeaderMenuByName("Computers", "Notebooks");
-		userNotebookPage = PageGeneratorManage.getUserNotebookPage(driver);
+		userComputerPage = PageGeneratorManage.getUserComputerPage(driver);
 
 	}
 
@@ -49,10 +49,10 @@ public class User_05_Sort_Display_Paging extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "TC_01_Sort_With_Name_A_To_Z");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_01_Sort - Step 01: Select item in 'Sort by' dropdown is 'Name: A to Z'");
-		userNotebookPage.selectSortByDropDownByText("Name: A to Z");
+		userComputerPage.selectSortByDropDownByText("Name: A to Z");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_01_Sort - Step 02: Verify product name is sorted by A to Z");
-		Assert.assertTrue(userNotebookPage.isProductNameSortByAToZ());
+		Assert.assertTrue(userComputerPage.isProductNameSortByAToZ());
 	}
 
 	@Test
@@ -60,10 +60,10 @@ public class User_05_Sort_Display_Paging extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "TC_02_Sort_With_Name_Z_To_A");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_02_Sort - Step 01: Select item in 'Sort by' dropdown is 'Name: Z to A'");
-		userNotebookPage.selectSortByDropDownByText("Name: Z to A");
+		userComputerPage.selectSortByDropDownByText("Name: Z to A");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_02_Sort - Step 02: Verify product name is sorted by Z to A");
-		Assert.assertTrue(userNotebookPage.isProductNameSortByZToA());
+		Assert.assertTrue(userComputerPage.isProductNameSortByZToA());
 	}
 
 	@Test
@@ -71,10 +71,10 @@ public class User_05_Sort_Display_Paging extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "TC_03_Sort_With_Price_Low_To_High");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_03_Sort - Step 01: Select item in 'Sort by' dropdown is 'Price: Low to High'");
-		userNotebookPage.selectSortByDropDownByText("Price: Low to High");
+		userComputerPage.selectSortByDropDownByText("Price: Low to High");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_03_Sort - Step 02: Verify product price is sorted by Low to High");
-		Assert.assertTrue(userNotebookPage.isProductPriceSortByLowToHigh());
+		Assert.assertTrue(userComputerPage.isProductPriceSortByLowToHigh());
 	}
 
 	@Test
@@ -82,10 +82,10 @@ public class User_05_Sort_Display_Paging extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "TC_04_Sort_With_Price_High_To_Low");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Sort - Step 01: Select item in 'Sort by' dropdown is 'Price: High to Low'");
-		userNotebookPage.selectSortByDropDownByText("Price: High to Low");
+		userComputerPage.selectSortByDropDownByText("Price: High to Low");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Sort - Step 02: Verify product price is sorted by High to Low");
-		Assert.assertTrue(userNotebookPage.isProductPriceSortByHighToLow());
+		Assert.assertTrue(userComputerPage.isProductPriceSortByHighToLow());
 	}
 
 	@Test
@@ -93,19 +93,19 @@ public class User_05_Sort_Display_Paging extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "TC_05_Display_With_3_Products_One_Page");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Display - Step 01: Select item in 'Display' dropdown is '3'");
-		userNotebookPage.selectDisplayDropDownByTextNumber("3");
+		userComputerPage.selectDisplayDropDownByTextNumber("3");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Display - Step 02: Verify the number of products is less than or equal to '3'");
-		Assert.assertTrue(userNotebookPage.countProductOnDisplayed() <= 3);
+		Assert.assertTrue(userComputerPage.countProductOnDisplayed() <= 3);
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Display - Step 03: Verify Paging 'Next Icon' is displayed");
-		Assert.assertTrue(userNotebookPage.isPagingNextIconDisplayed());
+		Assert.assertTrue(userComputerPage.isPagingNextIconDisplayed());
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Display - Step 04: open paging with number is '2'");
-		userNotebookPage.openPagingByTextNumber("2");
+		userComputerPage.openPagingByTextNumber("2");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Display - Step 05: Verify Paging 'previous Icon' is displayed");
-		Assert.assertTrue(userNotebookPage.isPagingPreviousIconDisplayed());
+		Assert.assertTrue(userComputerPage.isPagingPreviousIconDisplayed());
 	}
 
 	@Test
@@ -113,13 +113,13 @@ public class User_05_Sort_Display_Paging extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "TC_06_Display_With_6_Products_One_Page");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_06_Display - Step 01: Select item in 'Display' dropdown is '6'");
-		userNotebookPage.selectDisplayDropDownByTextNumber("6");
+		userComputerPage.selectDisplayDropDownByTextNumber("6");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_06_Display - Step 02: Verify the number of products is less than or equal to '6'");
-		Assert.assertTrue(userNotebookPage.countProductOnDisplayed() <= 6);
+		Assert.assertTrue(userComputerPage.countProductOnDisplayed() <= 6);
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_06_Display - Step 03: Verify Paging 'Next Icon' is undisplayed");
-		Assert.assertTrue(userNotebookPage.isPagingNextIconUndisplayed());
+		Assert.assertTrue(userComputerPage.isPagingNextIconUndisplayed());
 	}
 
 	@Test
@@ -127,13 +127,13 @@ public class User_05_Sort_Display_Paging extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "TC_07_Display_With_9_Products_One_Page");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_07_Display - Step 01: Select item in 'Display' dropdown is '9'");
-		userNotebookPage.selectDisplayDropDownByTextNumber("9");
+		userComputerPage.selectDisplayDropDownByTextNumber("9");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_07_Display - Step 02: Verify the number of products is less than or equal to '9'");
-		Assert.assertTrue(userNotebookPage.countProductOnDisplayed() <= 9);
+		Assert.assertTrue(userComputerPage.countProductOnDisplayed() <= 9);
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_07_Display - Step 03: Verify Paging 'Next Icon' is undisplayed");
-		Assert.assertTrue(userNotebookPage.isPagingNextIconUndisplayed());
+		Assert.assertTrue(userComputerPage.isPagingNextIconUndisplayed());
 	}
 
 	@AfterClass
@@ -145,5 +145,5 @@ public class User_05_Sort_Display_Paging extends BaseTest {
 	private SeverName severname;
 	private UserHomePageObject userHomePage;
 	private UserLoginPageObject userLoginPage;
-	private UserNotebookPageObject userNotebookPage;
+	private UserComputerPageObject userComputerPage;
 }

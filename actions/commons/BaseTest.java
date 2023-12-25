@@ -3,9 +3,7 @@ package commons;
 import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.joda.time.DateTime;
@@ -68,11 +66,9 @@ public class BaseTest {
 		return driver;
 	}
 
-	protected WebDriver getBrowserDriver(String browserName) {
+	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
 		if (browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.getGlobalConstants().getProjectPath() + "\\FirefoxLog.log");
 			driver = new FirefoxDriver();
 		} else if (browserName.equals("h_firefox")) {
 			WebDriverManager.firefoxdriver().setup();
@@ -82,12 +78,7 @@ public class BaseTest {
 			driver = new FirefoxDriver(options);
 		} else if (browserName.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			System.setProperty("webdriver.chrome.args", "--disable-logging");
-			System.setProperty("webdriver.chrome.silentOutput", "true");
-			ChromeOptions options = new ChromeOptions();
-			options.setExperimentalOption("useAutomationExtension", false);
-			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-			driver = new ChromeDriver(options);
+			driver = new ChromeDriver();
 		} else if (browserName.equals("h_chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
@@ -106,48 +97,6 @@ public class BaseTest {
 		} else if (browserName.equals("coccoc")) {
 			WebDriverManager.chromedriver().driverVersion("115.0.5790.102").setup();
 			ChromeOptions options = new ChromeOptions();
-			if (GlobalConstants.getGlobalConstants().getOsName() == "Windows") {
-				options.setBinary("C:\\Program Files\\CocCoc\\Browser\\Application\\browser.exe");
-			} else {
-				options.setBinary("C:\\Program Files\\CocCoc\\Browser\\Application\\browser.exe");
-			}
-			driver = new ChromeDriver(options);
-		} else {
-			throw new RuntimeException("Browser name invalid");
-		}
-
-		driver.get(GlobalConstants.getGlobalConstants().getPortalDevUrl());
-		driver.manage().timeouts().implicitlyWait(GlobalConstants.getGlobalConstants().getLongTimeOut(), TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		return driver;
-	}
-
-	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
-		if (browserName.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-		} else if (browserName.equals("h_firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			// Browser selenium > 3.xx
-			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("--headless");
-			options.addArguments("window-size=1366x768");
-			driver = new FirefoxDriver(options);
-		} else if (browserName.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		} else if (browserName.equals("h_chrome")) {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless");
-			options.addArguments("window-size=1366x768");
-			driver = new ChromeDriver(options);
-		} else if (browserName.equals("edge")) {
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-		} else if (browserName.equals("coccoc")) {
-			WebDriverManager.chromedriver().driverVersion("115.0.5790.102").setup();
-			ChromeOptions options = new ChromeOptions();
 			options.setBinary("C:\\Program Files\\CocCoc\\Browser\\Application\\browser.exe");
 			driver = new ChromeDriver(options);
 		} else {
@@ -161,37 +110,6 @@ public class BaseTest {
 
 	public WebDriver getDriverInstance() {
 		return this.driver;
-	}
-
-	protected String getEnvironmentUrl(String serverName) {
-		String envUrl = null;
-		EnvironmentList environment = EnvironmentList.valueOf(serverName.toUpperCase());
-		switch (environment) {
-		case DEV:
-			envUrl = "https://demo.nopcommerce.com/";
-			break;
-		case TESTING:
-			envUrl = "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F";
-			break;
-		case STAGING:
-			envUrl = "https://tiki.vn/";
-			break;
-		case PRE_PROD:
-			envUrl = "https://pre-prod.nopcommerce.com/";
-			break;
-		case PROD:
-			envUrl = "https://prod.nopcommerce.com/";
-			break;
-		default:
-			envUrl = null;
-			break;
-		}
-		return envUrl;
-	}
-
-	public int generateFakeNumber() {
-		Random rand = new Random();
-		return rand.nextInt(99999);
 	}
 
 	public static long getRandomNumberByDateTime() {
@@ -293,7 +211,6 @@ public class BaseTest {
 		return getCurrentDate() + "/" + getCurrentMonth() + "/" + getCurrentYear();
 	}
 
-	// showBrowserConsoleLogs Thường được sử dụng sau khi chuyển trang - ko dùng dc firefox mới nhất
 	protected void showBrowserConsoleLogs(WebDriver driver) {
 		if (driver.toString().contains("chrome") || driver.toString().contains("edge")) {
 			LogEntries logs = driver.manage().logs().get("browser");

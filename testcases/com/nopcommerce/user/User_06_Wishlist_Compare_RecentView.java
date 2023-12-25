@@ -17,9 +17,9 @@ import com.nopcommerce.common.Common_01_Register_End_User;
 import commons.BaseTest;
 import commons.PageGeneratorManage;
 import pageObjects.nopCommerce.user.UserComparePageObject;
+import pageObjects.nopCommerce.user.UserComputerPageObject;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserLoginPageObject;
-import pageObjects.nopCommerce.user.UserNotebookPageObject;
 import pageObjects.nopCommerce.user.UserProductPageObject;
 import pageObjects.nopCommerce.user.UserRecentlyViewedPageObject;
 import pageObjects.nopCommerce.user.UserShoppingCartPageObject;
@@ -126,22 +126,22 @@ public class User_06_Wishlist_Compare_RecentView extends BaseTest {
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Add_To_Compare - Step 02: Open submenu 'Notebooks' in 'Computers' menu header");
 		userHomePage.openSubmenuPageAtHeaderMenuByName("Computers", "Notebooks");
-		userNotebookPage = PageGeneratorManage.getUserNotebookPage(driver);
+		userComputerPage = PageGeneratorManage.getUserComputerPage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Add_To_Compare - Step 03: Click to button 'Add to compare' with product name is 'Apple MacBook Pro 13-inch'");
-		userNotebookPage.clickToAddToCompareButtonByProductName("Apple MacBook Pro 13-inch");
+		userComputerPage.clickToAddToCompareButtonByProductName("Apple MacBook Pro 13-inch");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Add_To_Compare - Step 04: Verify 'Add to compare' with product name is 'Apple MacBook Pro 13-inch'");
 		Assert.assertEquals(userProductPage.getContenMessage(), "The product has been added to your product comparison");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Add_To_Compare - Step 05: Click to button 'Add to compare' with product name is 'Asus N551JK-XO076H Laptop'");
-		userNotebookPage.clickToAddToCompareButtonByProductName("Asus N551JK-XO076H Laptop");
+		userComputerPage.clickToAddToCompareButtonByProductName("Asus N551JK-XO076H Laptop");
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Add_To_Compare - Step 06: Verify 'Add to compare' with product name is 'Apple MacBook Pro 13-inch'");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Add_To_Compare - Step 06: Verify message is 'The product has been added to your product comparison' displayed");
 		Assert.assertEquals(userProductPage.getContenMessage(), "The product has been added to your product comparison");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Add_To_Compare - Step 07: Navigate to 'Compare products list' page in footer menu");
-		userNotebookPage.openPageAtFooterByText("Compare products list");
+		userComputerPage.openPageAtFooterByText("Compare products list");
 		userComparePage = PageGeneratorManage.getUserComparePage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Add_To_Compare - Step 08: Verify information on compare list displayed");
@@ -170,38 +170,38 @@ public class User_06_Wishlist_Compare_RecentView extends BaseTest {
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 02: Open submenu 'Notebooks' in 'Computers' menu header");
 		userHomePage.openSubmenuPageAtHeaderMenuByName("Computers", "Notebooks");
-		userNotebookPage = PageGeneratorManage.getUserNotebookPage(driver);
+		userComputerPage = PageGeneratorManage.getUserComputerPage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 03: Click to product with name is 'Apple MacBook Pro 13-inch'");
-		userProductPage = userNotebookPage.clickToProductAtProductsGridByText("Apple MacBook Pro 13-inch");
+		userProductPage = userComputerPage.clickToProductAtProductsGridByText("Apple MacBook Pro 13-inch");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 04: navigate back to 'Notebooks'page in 'Categories' page");
 		userProductPage.navigateToPreviousPage();
-		userNotebookPage = PageGeneratorManage.getUserNotebookPage(driver);
+		userComputerPage = PageGeneratorManage.getUserComputerPage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 05: Click to product with name is 'Apple MacBook Pro 13-inch'");
-		userProductPage = userNotebookPage.clickToProductAtProductsGridByText("Asus N551JK-XO076H Laptop");
+		userProductPage = userComputerPage.clickToProductAtProductsGridByText("Asus N551JK-XO076H Laptop");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 06: navigate back to 'Notebooks'page in 'Categories' page");
 		userProductPage.navigateToPreviousPage();
-		userNotebookPage = PageGeneratorManage.getUserNotebookPage(driver);
+		userComputerPage = PageGeneratorManage.getUserComputerPage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 07: Click to product with name is 'Apple MacBook Pro 13-inch'");
-		userProductPage = userNotebookPage.clickToProductAtProductsGridByText("HP Envy 6-1180ca 15.6-Inch Sleekbook");
+		userProductPage = userComputerPage.clickToProductAtProductsGridByText("HP Envy 6-1180ca 15.6-Inch Sleekbook");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 08: navigate back to 'Notebooks'page in 'Categories' page");
 		userProductPage.navigateToPreviousPage();
-		userNotebookPage = PageGeneratorManage.getUserNotebookPage(driver);
+		userComputerPage = PageGeneratorManage.getUserComputerPage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 09: Click to product with name is 'Apple MacBook Pro 13-inch'");
-		userProductPage = userNotebookPage.clickToProductAtProductsGridByText("HP Spectre XT Pro UltraBook");
+		userProductPage = userComputerPage.clickToProductAtProductsGridByText("HP Spectre XT Pro UltraBook");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 10: navigate back to 'Notebooks'page in 'Categories' page");
 		userProductPage.navigateToPreviousPage();
-		userNotebookPage = PageGeneratorManage.getUserNotebookPage(driver);
+		userComputerPage = PageGeneratorManage.getUserComputerPage(driver);
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 11: Click to product with name is 'Apple MacBook Pro 13-inch'");
-		userProductPage = userNotebookPage.clickToProductAtProductsGridByText("Lenovo Thinkpad X1 Carbon Laptop");
+		userProductPage = userComputerPage.clickToProductAtProductsGridByText("Lenovo Thinkpad X1 Carbon Laptop");
 
 		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Recently_Viewed - Step 12: Navigate to 'Recently viewed products' page in footer menu");
 		userProductPage.openPageAtFooterByText("Recently viewed products");
@@ -226,7 +226,7 @@ public class User_06_Wishlist_Compare_RecentView extends BaseTest {
 	private UserProductPageObject userProductPage;
 	private UserWishlistPageObject userWishlistPage;
 	private UserShoppingCartPageObject userShoppingCartPage;
-	private UserNotebookPageObject userNotebookPage;
+	private UserComputerPageObject userComputerPage;
 	private UserComparePageObject userComparePage;
 	private UserRecentlyViewedPageObject userRecentlyViewedPage;
 }

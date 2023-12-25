@@ -32,4 +32,7 @@ public class UserMyAccountPageUI {
 	public static final String CHANGE_PASS_NEW_PASSWORD = "css=input#NewPassword";
 	public static final String CHANGE_PASS_CONFIRM_NEW_PASSWORD = "css=input#ConfirmNewPassword";
 	public static final String CHANGE_PASSWORD_BUTTON = "css=button.change-password-button";
+
+	public static final String ORDER_NUMBER_BY_TEXT = "xpath=//div[@class='title']/strong[text()='%s']";
+	public static final String DETAILS_BUTTON_BY_ORDER_NUMBER = "xpath=//div[@class='title']/strong[text()='Order Number: %s']//ancestor::div[@class='section order-item']//button[@class='button-2 order-details-button']";
 }

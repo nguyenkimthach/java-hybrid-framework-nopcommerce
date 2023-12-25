@@ -1,6 +1,6 @@
 package pageUIs.nopCommerce.user;
 
-public class UserNotebookPageUI {
+public class UserComputerPageUI {
 	public static final String SORTBY_DROPDOWN = "css=select#products-orderby";
 	public static final String ALL_PRODUCT_NAME = "css=h2.product-title>a";
 	public static final String ALL_PRODUCT_Price = "css=div.prices>span.actual-price";
