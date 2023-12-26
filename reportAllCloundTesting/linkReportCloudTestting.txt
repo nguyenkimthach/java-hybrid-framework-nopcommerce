@@ -1,0 +1,8 @@
+Browserstack_link
+https://automate.browserstack.com/builds/f2d2fac1376d11d5b4aef534c4faa14f7b271781/sessions/77adb32f32a95da38998936a8dc0eac5a32b5720?auth_token=cb0ded29034436bcc0277587f6ea272d512d8b5b304da551d134b21fda1ed284
+
+Saucelab_link
+https://app.saucelabs.com/tests/e09db36a615d442785355aa03ddcdb19
+
+Lamda_link
+https://automation.lambdatest.com/logs/?sessionID=5a8bb820f331924a5e31ed280d25d124
