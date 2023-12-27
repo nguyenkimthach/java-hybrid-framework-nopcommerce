@@ -1,0 +1,57 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite parallel="tests" name="Nopcommerce - User" thread-count="5">
+
+	<listeners>
+		<listener class-name="reportConfig.ExtentTestListenerV5" />
+	</listeners>
+
+	<test name="Run on Chrome local">
+		<parameter name="envName" value="local" />
+		<parameter name="browserName" value="chrome" />
+		<classes>
+			<class name="com.nopcommerce.user.User_01_Register" />
+		</classes>
+	</test>
+
+	<test name="Run on Chrome browserstack">
+	<parameter name="envName" value="browserstack" />
+	<parameter name="browserName" value="Chrome" />
+	<parameter name="osName" value="OS X" />
+	<parameter name="osVersion" value="Big Sur" />
+	<classes>
+	<class name="com.nopcommerce.user.User_01_Register" />
+	</classes>
+	</test>
+
+	<test name="Run on Chrome saucelab">
+	<parameter name="envName" value="saucelab" />
+	<parameter name="browserName" value="Chrome" />
+	<parameter name="osName" value="macOS 13" />
+	<classes>
+	<class name="com.nopcommerce.user.User_01_Register" />
+	</classes>
+	</test>
+
+	<test name="Run on Chrome crossbrowser">
+	<parameter name="envName" value="crossbrowser" />
+	<parameter name="browserName" value="Chrome" />
+	<parameter name="osName" value="Windows" />
+	<parameter name="osVersion" value="10" />
+	<parameter name="browserVersion" value="120" />
+	<classes>
+	<class name="com.nopcommerce.user.User_01_Register" />
+	</classes>
+	</test>
+
+	<test name="Run on Chrome lambda">
+	<parameter name="envName" value="lambda" />
+	<parameter name="browserName" value="Chrome" />
+	<parameter name="osName" value="Windows 10" />
+	<parameter name="browserVersion" value="120" />
+	<classes>
+	<class name="com.nopcommerce.user.User_01_Register" />
+	</classes>
+	</test>
+
+</suite> 
+ 		
