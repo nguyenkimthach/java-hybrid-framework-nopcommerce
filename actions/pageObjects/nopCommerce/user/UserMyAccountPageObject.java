@@ -96,7 +96,7 @@ public class UserMyAccountPageObject extends BasePage {
 
 	public void selectAddressCountryDropdownByText(String country) {
 		waitForElementClickable(UserMyAccountPageUI.ADDRESS_COUNTRY_DROPDOWN);
-		SelectItemInCustomDropdown(UserMyAccountPageUI.ADDRESS_COUNTRY_DROPDOWN, UserMyAccountPageUI.ADDRESS_COUNTRY_DROPDOWN_TEXT_ITEM, country);
+		selectItemInCustomDropdown(UserMyAccountPageUI.ADDRESS_COUNTRY_DROPDOWN, UserMyAccountPageUI.ADDRESS_COUNTRY_DROPDOWN_TEXT_ITEM, country);
 	}
 
 	public void inputToAddressCityTextbox(String city) {

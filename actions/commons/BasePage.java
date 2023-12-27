@@ -243,13 +243,12 @@ public class BasePage {
 		return select.isMultiple();
 	}
 
-	protected void SelectItemInCustomDropdown(String parentXpath, String childXpath, String expectedTextItem) {
-		getWebElement(parentXpath).click();
+	protected void selectItemInCustomDropdown(String parentXpath, String childXpath, String expectedTextItem) {
+		clickToElement(parentXpath);
 		sleepInSecond(1);
 
 		WebDriverWait explicitwait = new WebDriverWait(driver, GlobalConstants.getGlobalConstants().getLongTimeOut());
 		List<WebElement> speeDropdownItems = explicitwait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(childXpath)));
-		;
 		for (WebElement item : speeDropdownItems) {
 			if (item.getText().trim().equals(expectedTextItem)) {
 				JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
@@ -287,6 +286,10 @@ public class BasePage {
 
 	protected String getElementCssValue(String locatorType, String propertyName) {
 		return getWebElement(locatorType).getCssValue(propertyName);
+	}
+
+	protected String getElementCssValue(String locatorType, String propertyName, String... dynamicValues) {
+		return getWebElement(getDynamicXpath(locatorType, dynamicValues)).getCssValue(propertyName);
 	}
 
 	protected String getHexaColorFromRGBA(String rgbaValue) {
@@ -437,10 +440,22 @@ public class BasePage {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getWebElement(locatorType));
 	}
 
+	protected void scrollToElement(String locatorType, String... dynamicValues) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getWebElement(getDynamicXpath(locatorType, dynamicValues)));
+	}
+
 	protected String getElementValueByJSXpath(String xpathLocator) {
 		JavascriptExecutor jsExcutor = (JavascriptExecutor) driver;
 		if (xpathLocator.startsWith("xpath=")) {
 			xpathLocator = xpathLocator.replace("xpath=", "");
+		}
+		return (String) jsExcutor.executeScript("return $(document.evaluate(\"" + xpathLocator + "\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).val()");
+	}
+
+	protected String getElementValueByJSXpath(String xpathLocator, String... dynamicValues) {
+		JavascriptExecutor jsExcutor = (JavascriptExecutor) driver;
+		if (getDynamicXpath(xpathLocator, dynamicValues).startsWith("xpath=")) {
+			xpathLocator = getDynamicXpath(xpathLocator, dynamicValues).replace("xpath=", "");
 		}
 		return (String) jsExcutor.executeScript("return $(document.evaluate(\"" + xpathLocator + "\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).val()");
 	}

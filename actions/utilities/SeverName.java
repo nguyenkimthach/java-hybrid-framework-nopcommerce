@@ -9,6 +9,9 @@ public interface SeverName extends Config {
 	@Key("App.Url")
 	String appUrl();
 
+	@Key("App.AdminUrl")
+	String appAdminUrl();
+
 	@Key("App.User")
 	String appUserName();
 

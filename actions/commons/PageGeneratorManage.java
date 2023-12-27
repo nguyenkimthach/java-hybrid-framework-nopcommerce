@@ -2,6 +2,8 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
+import pageObjects.nopCommerce.admin.AdminDashboardPageObject;
+import pageObjects.nopCommerce.admin.AdminLoginPageObject;
 import pageObjects.nopCommerce.user.UserCheckOutPageObject;
 import pageObjects.nopCommerce.user.UserComparePageObject;
 import pageObjects.nopCommerce.user.UserComputerPageObject;
@@ -73,5 +75,13 @@ public class PageGeneratorManage {
 
 	public static UserOrderInformationPageObject getUserOrderInformationPage(WebDriver driver) {
 		return new UserOrderInformationPageObject(driver);
+	}
+
+	public static AdminLoginPageObject getAdminLoginPage(WebDriver driver) {
+		return new AdminLoginPageObject(driver);
+	}
+
+	public static AdminDashboardPageObject getAdminDashboardPage(WebDriver driver) {
+		return new AdminDashboardPageObject(driver);
 	}
 }

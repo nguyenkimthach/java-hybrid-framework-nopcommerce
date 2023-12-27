@@ -14,8 +14,8 @@ public class ChromeDriverManager implements IBroswserFactory {
 
 	@Override
 	public WebDriver getBrowserDriver() {
-		// WebDriverManager.chromedriver().setup();
-		WebDriverManager.chromedriver().driverVersion("120.0.6099.71").setup();
+		WebDriverManager.chromedriver().setup();
+		// WebDriverManager.chromedriver().driverVersion("120.0.6099.71").setup();
 		System.setProperty("webdriver.chrome.args", "--disable-logging");
 		System.setProperty("webdriver.chrome.silentOutput", "true");
 

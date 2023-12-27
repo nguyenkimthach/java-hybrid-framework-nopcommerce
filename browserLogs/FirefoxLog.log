@@ -1,17 +1,82 @@
-1702837385304	geckodriver	INFO	Listening on 127.0.0.1:29580
-1702837385951	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofileMbpQMb"
+1703653190869	geckodriver	INFO	Listening on 127.0.0.1:43508
+1703653191629	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofile2h4inJ"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
-1702837387662	Marionette	INFO	Marionette enabled
+1703653192083	Marionette	INFO	Marionette enabled
 Dynamically enable window occlusion 0
-1702837388212	Marionette	INFO	Listening on port 56990
-Read port: 56990
-Read port: 56990
-1702837390029	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demo.nopcommerce.com."
-console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demo.nopcommerce.com."
-console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demo.nopcommerce.com."
-console.error: (new InvalidStateError("JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment", (void 0), 565))
-JavaScript error: resource:///modules/FaviconLoader.sys.mjs, line 580: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
-1702837415574	Marionette	INFO	Stopped listening on port 56990
+1703653192198	Marionette	INFO	Listening on port 55369
+Read port: 55369
+1703653192488	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://admin-demo.nopcommerce.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://admin-demo.nopcommerce.com."
+1703653201765	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:466:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:219:33
+send@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:82714
+ajax@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:78291
+@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:58:16352
+k/t[r]@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:58:12396
+t@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:62:46564
+initOnce@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:62:46966
+init@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:62:47618
+@https://admin-demo.nopcommerce.com/admin/ line 1 > injectedScript:3:46
+e@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30038
+l/</t<@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30340
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+1703653219060	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:466:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:219:33
+send@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:82714
+ajax@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:78291
+@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:58:16352
+k/t[r]@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:58:12396
+t@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:62:46564
+initOnce@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:62:46966
+init@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:62:47618
+@https://admin-demo.nopcommerce.com/Admin/Customer/Create line 1 > injectedScript:3:46
+e@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30038
+l/</t<@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30340
+1703653222235	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1703653222265	Marionette	INFO	Stopped listening on port 55369
+JavaScript warning: https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80, line 100: Script terminated by timeout at:
+d@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:100:29929
+wi@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:100:28384
+yt@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:100:6944
+yi@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:100:23723
+ff@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:100:18904
+rf/<@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:100:17440
+h@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:100:16685
+c@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:28327
+fireWith@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:29072
+l@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:79901
+o/<@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:82355
+send@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:82714
+ajax@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:78291
+@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:58:16352
+k/t[r]@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:58:12396
+t@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:62:46564
+initOnce@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:62:46966
+init@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:62:47618
+@https://admin-demo.nopcommerce.com/Admin/Customer/Edit/177 line 1 > injectedScript:3:46
+e@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30038
+l/</t<@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30340
+
 Dynamically enable window occlusion 1
+console.warn: services.settings: blocklists/gfx sync interrupted by shutdown
+console.warn: services.settings: blocklists/addons-bloomfilters sync interrupted by shutdown
+console.warn: services.settings: main/normandy-recipes-capabilities sync interrupted by shutdown
+console.warn: services.settings: main/language-dictionaries sync interrupted by shutdown
+console.warn: services.settings: main/password-recipes sync interrupted by shutdown
+console.warn: services.settings: main/password-rules sync interrupted by shutdown
+console.warn: services.settings: main/translations-identification-models sync interrupted by shutdown
+console.warn: services.settings: main/fingerprinting-protection-overrides sync interrupted by shutdown
+console.warn: services.settings: main/url-classifier-skip-urls sync interrupted by shutdown
+console.warn: services.settings: main/devtools-compatibility-browsers sync interrupted by shutdown
+console.warn: services.settings: main/search-config-v2 sync interrupted by shutdown
+console.warn: services.settings: main/sites-classification sync interrupted by shutdown
+console.warn: services.settings: main/anti-tracking-url-decoration sync interrupted by shutdown
+console.error: (new AbortError("IndexedDB: main/windows-default-browser-agent getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))

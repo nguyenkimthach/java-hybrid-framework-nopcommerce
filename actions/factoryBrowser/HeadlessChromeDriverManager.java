@@ -10,8 +10,8 @@ public class HeadlessChromeDriverManager implements IBroswserFactory {
 
 	@Override
 	public WebDriver getBrowserDriver() {
-		// WebDriverManager.chromedriver().setup();
-		WebDriverManager.chromedriver().driverVersion("120.0.6099.71").setup();
+		WebDriverManager.chromedriver().setup();
+		// WebDriverManager.chromedriver().driverVersion("120.0.6099.71").setup();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless");
 		options.addArguments("window-size=1366x768");
