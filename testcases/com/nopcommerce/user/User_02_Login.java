@@ -45,91 +45,91 @@ public class User_02_Login extends BaseTest {
 	}
 
 	@Test
-	public void TC_01_Login_With_Empty_Data(Method method) {
-		ExtentTestManager.startTest(method.getName(), "TC_01_Login_With_Empty_Data");
+	public void TC_User_01_Login_With_Empty_Data(Method method) {
+		ExtentTestManager.startTest(method.getName(), "TC_User_01_Login_With_Empty_Data");
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_01_Login - Step 01: Click to 'Login' button");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_01_Login - Step 01: Click to 'Login' button");
 		userLoginPage.clickToLoginButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_01_Login - Step 02: Verify error message on mandantory field");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_01_Login - Step 02: Verify error message on mandantory field");
 		Assert.assertTrue(userLoginPage.isEmailErrorMessageDisplay("Please enter your email"));
 
 	}
 
 	@Test
-	public void TC_02_Login_With_Invalid_Email(Method method) {
-		ExtentTestManager.startTest(method.getName(), "TC_02_Login_With_Invalid_Email");
+	public void TC_User_02_Login_With_Invalid_Email(Method method) {
+		ExtentTestManager.startTest(method.getName(), "TC_User_02_Login_With_Invalid_Email");
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_02_Login - Step 01: inPut to 'Email' textbox with text is '" + invalidEmail + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_02_Login - Step 01: inPut to 'Email' textbox with text is '" + invalidEmail + "'");
 		userLoginPage.inPutToEmailTextbox(invalidEmail);
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_02_Login - Step 02: Click to 'Login' button");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_02_Login - Step 02: Click to 'Login' button");
 		userLoginPage.clickToLoginButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_02_Login - Step 03: Verify error message on mandantory field");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_02_Login - Step 03: Verify error message on mandantory field");
 		Assert.assertTrue(userLoginPage.isEmailErrorMessageDisplay("Wrong email"));
 	}
 
 	@Test
-	public void TC_03_Login_With_Unregistered_Email(Method method) {
-		ExtentTestManager.startTest(method.getName(), "TC_03_Login_With_Unregistered_Email");
+	public void TC_User_03_Login_With_Unregistered_Email(Method method) {
+		ExtentTestManager.startTest(method.getName(), "TC_User_03_Login_With_Unregistered_Email");
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_03_Login - Step 01: inPut to 'Email' textbox with text is '" + unregisteredEmail + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_03_Login - Step 01: inPut to 'Email' textbox with text is '" + unregisteredEmail + "'");
 		userLoginPage.inPutToEmailTextbox(unregisteredEmail);
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_03_Login - Step 02: Click to 'Login' button");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_03_Login - Step 02: Click to 'Login' button");
 		userLoginPage.clickToLoginButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_03_Login - Step 03: Verify sumary error message with 'Please correct the errors and try again.No customer account found' is displayed ");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_03_Login - Step 03: Verify sumary error message with 'Please correct the errors and try again.No customer account found' is displayed ");
 		Assert.assertEquals(userLoginPage.getVaidationSumaryError(), "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
 
 	}
 
 	@Test
-	public void TC_04_Login_With_Registered_Email(Method method) {
-		ExtentTestManager.startTest(method.getName(), "TC_04_Login_With_Registered_Email");
+	public void TC_User_04_Login_With_Registered_Email(Method method) {
+		ExtentTestManager.startTest(method.getName(), "TC_User_04_Login_With_Registered_Email");
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Login - Step 01: inPut to 'Email' textbox with text is '" + registeredEmail + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_04_Login - Step 01: inPut to 'Email' textbox with text is '" + registeredEmail + "'");
 		userLoginPage.inPutToEmailTextbox(registeredEmail);
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Login - Step 02: Click to 'Login' button");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_04_Login - Step 02: Click to 'Login' button");
 		userLoginPage.clickToLoginButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_04_Login - Step 03: Verify sumary error message with 'Please correct the errors and try again.The credentials provided are incorrect' is displayed ");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_04_Login - Step 03: Verify sumary error message with 'Please correct the errors and try again.The credentials provided are incorrect' is displayed ");
 		Assert.assertEquals(userLoginPage.getVaidationSumaryError(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
 	}
 
 	@Test
-	public void TC_05_Login_With_Registered_Email_And_Invalid_Password(Method method) {
-		ExtentTestManager.startTest(method.getName(), "TC_05_Login_With_Registered_Email_And_Invalid_Password");
+	public void TC_User_05_Login_With_Registered_Email_And_Invalid_Password(Method method) {
+		ExtentTestManager.startTest(method.getName(), "TC_User_05_Login_With_Registered_Email_And_Invalid_Password");
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Login - Step 01: inPut to 'Email' textbox with text is '" + registeredEmail + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_05_Login - Step 01: inPut to 'Email' textbox with text is '" + registeredEmail + "'");
 		userLoginPage.inPutToEmailTextbox(registeredEmail);
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Login - Step 02: inPut to 'Password' textbox with text is '" + invalidPassword + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_05_Login - Step 02: inPut to 'Password' textbox with text is '" + invalidPassword + "'");
 		userLoginPage.inPutToPasswordTextbox(invalidPassword);
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Login - Step 03: Click to 'Login' button");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_05_Login - Step 03: Click to 'Login' button");
 		userLoginPage.clickToLoginButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_05_Login - Step 04: Verify sumary error message with 'Please correct the errors and try again.The credentials provided are incorrect' is displayed ");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_05_Login - Step 04: Verify sumary error message with 'Please correct the errors and try again.The credentials provided are incorrect' is displayed ");
 		Assert.assertEquals(userLoginPage.getVaidationSumaryError(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
 	}
 
 	@Test
-	public void TC_06_Login_With_Registered_Email_And_Valid_Password(Method method) {
-		ExtentTestManager.startTest(method.getName(), "TC_06_Login_With_Registered_Email_And_Valid_Password");
+	public void TC_User_06_Login_With_Registered_Email_And_Valid_Password(Method method) {
+		ExtentTestManager.startTest(method.getName(), "TC_User_06_Login_With_Registered_Email_And_Valid_Password");
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_06_Login - Step 01: inPut to 'Email' textbox with text is '" + registeredEmail + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_06_Login - Step 01: inPut to 'Email' textbox with text is '" + registeredEmail + "'");
 		userLoginPage.inPutToEmailTextbox(registeredEmail);
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_06_Login - Step 02: inPut to 'Password' textbox with text is '" + registeredPassword + "'");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_06_Login - Step 02: inPut to 'Password' textbox with text is '" + registeredPassword + "'");
 		userLoginPage.inPutToPasswordTextbox(registeredPassword);
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_06_Login - Step 03: Click to 'Login' button");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_06_Login - Step 03: Click to 'Login' button");
 		userHomePage = userLoginPage.clickToLoginButton();
 
-		ExtentTestManager.getTest().log(Status.INFO, "TC_06_Login - Step 04: Verify 'My account' link is displayed ");
+		ExtentTestManager.getTest().log(Status.INFO, "TC_User_06_Login - Step 04: Verify 'My account' link is displayed ");
 		Assert.assertTrue(userHomePage.isMyaccountLinkDisplayed());
 	}
 

@@ -610,7 +610,6 @@ public class BasePage {
 		List<String> names = elementLists.stream().map(n -> n.getText()).collect(Collectors.toList());
 		List<String> sortedNames = new ArrayList<String>(names);
 		Collections.sort(sortedNames);
-		System.out.println("Sorted list (sortedNames): " + sortedNames);
 		return names.equals(sortedNames);
 	}
 

@@ -44,7 +44,7 @@ public class User_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void TC_01_Search_With_Empty_Data(Method method) {
+	public void TC_User_01_Search_With_Empty_Data(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_01_With_Empty_Data");
 
 		ExtentTestManager.getTest().log(Status.INFO, "Search_01 - Step 01: Click to 'Search' button");
@@ -55,7 +55,7 @@ public class User_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void TC_02_Search_With_Data_Not_Exist(Method method) {
+	public void TC_User_02_Search_With_Data_Not_Exist(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_02_With_Data_Not_Exist");
 
 		ExtentTestManager.getTest().log(Status.INFO, "Register_02 - Step 01: inPut to 'Search Keyword' textbox with text is 'Macbook Pro 2050'");
@@ -69,7 +69,7 @@ public class User_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void TC_03_Search_With_Relative_Product_Name(Method method) {
+	public void TC_User_03_Search_With_Relative_Product_Name(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_03_With_Relative_Product_Name");
 
 		ExtentTestManager.getTest().log(Status.INFO, "Search_03 - Step 01: inPut to 'Search Keyword' textbox with text is 'lenovo'");
@@ -85,7 +85,7 @@ public class User_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void TC_04_Search_With_Absolute_Product_Name(Method method) {
+	public void TC_User_04_Search_With_Absolute_Product_Name(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_04_With_Relative_Product_Name");
 
 		ExtentTestManager.getTest().log(Status.INFO, "Search_04 - Step 01: inPut to 'Search Keyword' textbox with text is 'Thinkpad X1 Carbon'");
@@ -100,7 +100,7 @@ public class User_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void TC_05_Advanced_Search_With_Parent_Categories(Method method) {
+	public void TC_User_05_Advanced_Search_With_Parent_Categories(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_05_Advanced_With_Parent_Categories");
 
 		ExtentTestManager.getTest().log(Status.INFO, "Search_05 - Step 01: inPut to 'Search Keyword' textbox with text is 'Apple MacBook Pro'");
@@ -123,7 +123,7 @@ public class User_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void TC_06_Advanced_Search_With_Sub_Categories(Method method) {
+	public void TC_User_06_Advanced_Search_With_Sub_Categories(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_06_Advanced_With_Sub_Categories");
 
 		ExtentTestManager.getTest().log(Status.INFO, "Search_06 - Step 01: inPut to 'Search Keyword' textbox with text is 'Apple MacBook Pro'");
@@ -147,7 +147,7 @@ public class User_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void TC_07_Advanced_Search_With_Incorrect_Manufacturer(Method method) {
+	public void TC_User_07_Advanced_Search_With_Incorrect_Manufacturer(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_07_Advanced_With_Incorrect_Manufacturer");
 
 		ExtentTestManager.getTest().log(Status.INFO, "Search_07 - Step 01: inPut to 'Search Keyword' textbox with text is 'Apple MacBook Pro'");
@@ -173,7 +173,7 @@ public class User_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void TC_08_Advanced_Search_With_Correct_Manufacturer(Method method) {
+	public void TC_User_08_Advanced_Search_With_Correct_Manufacturer(Method method) {
 		ExtentTestManager.startTest(method.getName(), "Search_08_Advanced_With_Correct_Manufacturer");
 
 		ExtentTestManager.getTest().log(Status.INFO, "Search_08 - Step 01: inPut to 'Search Keyword' textbox with text is 'Apple MacBook Pro'");

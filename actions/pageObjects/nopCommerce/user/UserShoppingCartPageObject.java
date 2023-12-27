@@ -52,8 +52,13 @@ public class UserShoppingCartPageObject extends BasePage {
 	}
 
 	public boolean isMessageShoppingCartByTextDisplayed(String message) {
-		waitForAllElementVisible(UserShoppingCartPageUI.MESSAGE_SHOPPING_CART_BY_TEXT, message);
+		waitForElementVisible(UserShoppingCartPageUI.MESSAGE_SHOPPING_CART_BY_TEXT, message);
 		return isElementDisPlayed(UserShoppingCartPageUI.MESSAGE_SHOPPING_CART_BY_TEXT, message);
+	}
+
+	public boolean isMessageShoppingCartByTextUndisplayed(String message) {
+		waitForElementUndisplay(UserShoppingCartPageUI.MESSAGE_SHOPPING_CART_BY_TEXT, message);
+		return isElementUndisplayed(UserShoppingCartPageUI.MESSAGE_SHOPPING_CART_BY_TEXT, message);
 	}
 
 	public boolean isProductNameByTextUndisplayed(String productName) {

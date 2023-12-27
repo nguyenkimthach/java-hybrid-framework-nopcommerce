@@ -2,6 +2,8 @@ package commons;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -209,6 +211,24 @@ public class BaseTest {
 
 	protected String getCurrentDay() {
 		return getCurrentDate() + "/" + getCurrentMonth() + "/" + getCurrentYear();
+	}
+
+	/*
+	 * get curent day follow formart: "Sunday, December 24, 2023"
+	 */
+	protected static String getCurrentDateFormatted() {
+		LocalDate currentDate = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy");
+		return currentDate.format(formatter);
+	}
+
+	/*
+	 * get Yesterday day follow formart: "Sunday, December 24, 2023"
+	 */
+	protected static String getYesterdayFormatted() {
+		LocalDate yesterday = LocalDate.now().minusDays(1);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy");
+		return yesterday.format(formatter);
 	}
 
 	protected void showBrowserConsoleLogs(WebDriver driver) {

@@ -7,16 +7,12 @@
 
 	<parameter name="envName" value="local" />
 
-	<test name="Run on Firefox">
+	<test name="Run on Chrome">
 		<parameter name="browserName" value="chrome" />
-		<classes>
-			<class name="com.nopcommerce.admin.Admin_02_Customers" />
-		</classes>
-
-		<!-- <packages> -->
-		<!-- <package name="com.nopcommerce.admin" /> -->
-		<!-- <package name="com.nopcommerce.user" /> -->
-		<!-- </packages> -->
-
+		<packages>
+			<package name="com.nopcommerce.common" />
+			<package name="com.nopcommerce.user" />
+			<package name="com.nopcommerce.admin" />
+		</packages>
 	</test>
 </suite> 
