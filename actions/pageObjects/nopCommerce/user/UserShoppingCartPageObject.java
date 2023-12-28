@@ -92,4 +92,9 @@ public class UserShoppingCartPageObject extends BasePage {
 		return PageGeneratorManage.getUserCheckOutPage(driver);
 	}
 
+	public void isShoppingCartEmpty() {
+		if (isMessageShoppingCartByTextUndisplayed("Your Shopping Cart is empty!")) {
+			clickToChechboxRemoveByProductName("Apple MacBook Pro 13-inch");
+		}
+	}
 }

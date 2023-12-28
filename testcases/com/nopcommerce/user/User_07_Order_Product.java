@@ -68,10 +68,7 @@ public class User_07_Order_Product extends BaseTest {
 
 		userLoginPage.openPageAtFooterByText("Shopping cart");
 		userShoppingCartPage = PageGeneratorManage.getUserShoppingCartPage(driver);
-		if (userShoppingCartPage.isMessageShoppingCartByTextUndisplayed("Your Shopping Cart is empty!")) {
-			userShoppingCartPage.clickToChechboxRemoveByProductName("Apple MacBook Pro 13-inch");
-			Assert.assertTrue(userShoppingCartPage.isMessageShoppingCartByTextDisplayed("Your Shopping Cart is empty!"));
-		}
+		userShoppingCartPage.isShoppingCartEmpty();
 		userShoppingCartPage.openHomePage();
 
 		userHomePage.openSubmenuPageAtHeaderMenuByName("Computers", "Desktops");
