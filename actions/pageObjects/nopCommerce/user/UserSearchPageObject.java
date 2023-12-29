@@ -25,7 +25,7 @@ public class UserSearchPageObject extends BasePage {
 
 	public void inputToSearchKeywordTextbox(String keyword) {
 		waitForElementVisible(UserSearchPageUI.SEARCH_KEYWORD_TEXTBOX);
-		senkeyToElement(UserSearchPageUI.SEARCH_KEYWORD_TEXTBOX, keyword);
+		sendkeyToElement(UserSearchPageUI.SEARCH_KEYWORD_TEXTBOX, keyword);
 	}
 
 	public int getCountNumberProductsOnDisplayed(String keyword) {

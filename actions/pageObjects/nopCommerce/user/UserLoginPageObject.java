@@ -27,7 +27,7 @@ public class UserLoginPageObject extends BasePage {
 
 	public void inPutToEmailTextbox(String emailAddress) {
 		waitForElementVisible(UserLoginPageUI.EMAIL_TEXTBOX);
-		senkeyToElement(UserLoginPageUI.EMAIL_TEXTBOX, emailAddress);
+		sendkeyToElement(UserLoginPageUI.EMAIL_TEXTBOX, emailAddress);
 	}
 
 	public String getVaidationSumaryError() {
@@ -37,6 +37,6 @@ public class UserLoginPageObject extends BasePage {
 
 	public void inPutToPasswordTextbox(String password) {
 		waitForElementVisible(UserLoginPageUI.PASSWORD_TEXTBOX);
-		senkeyToElement(UserLoginPageUI.PASSWORD_TEXTBOX, password);
+		sendkeyToElement(UserLoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 }

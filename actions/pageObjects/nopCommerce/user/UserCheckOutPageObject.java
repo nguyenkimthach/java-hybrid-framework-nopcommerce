@@ -21,22 +21,22 @@ public class UserCheckOutPageObject extends BasePage {
 
 	public void inputToBillingFirstNameTextbox(String firstName) {
 		waitForElementVisible(UserCheckOutPageUI.BILLING_FIRST_NAME_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.BILLING_FIRST_NAME_TEXTBOX, firstName);
+		sendkeyToElement(UserCheckOutPageUI.BILLING_FIRST_NAME_TEXTBOX, firstName);
 	}
 
 	public void inputToBillingLastNameTextbox(String lastName) {
 		waitForElementVisible(UserCheckOutPageUI.BILLING_LAST_NAME_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.BILLING_LAST_NAME_TEXTBOX, lastName);
+		sendkeyToElement(UserCheckOutPageUI.BILLING_LAST_NAME_TEXTBOX, lastName);
 	}
 
 	public void inPutToBillingEmailTextbox(String emailAddress) {
 		waitForElementVisible(UserCheckOutPageUI.BILLING_EMAIL_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.BILLING_EMAIL_TEXTBOX, emailAddress);
+		sendkeyToElement(UserCheckOutPageUI.BILLING_EMAIL_TEXTBOX, emailAddress);
 	}
 
 	public void inputToBillingCompanyNameTextbox(String companyName) {
 		waitForElementVisible(UserCheckOutPageUI.BILLING_COMPANY_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.BILLING_COMPANY_TEXTBOX, companyName);
+		sendkeyToElement(UserCheckOutPageUI.BILLING_COMPANY_TEXTBOX, companyName);
 	}
 
 	public void selectToBillingCountryDropdownByText(String country) {
@@ -46,32 +46,32 @@ public class UserCheckOutPageObject extends BasePage {
 
 	public void inputToBillingCityTextbox(String city) {
 		waitForElementVisible(UserCheckOutPageUI.BILLING_CITY_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.BILLING_CITY_TEXTBOX, city);
+		sendkeyToElement(UserCheckOutPageUI.BILLING_CITY_TEXTBOX, city);
 	}
 
 	public void inputToBillingAddress1Textbox(String address_1) {
 		waitForElementVisible(UserCheckOutPageUI.BILLING_ADDRESS_1_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.BILLING_ADDRESS_1_TEXTBOX, address_1);
+		sendkeyToElement(UserCheckOutPageUI.BILLING_ADDRESS_1_TEXTBOX, address_1);
 	}
 
 	public void inputToBillingAddress2Textbox(String address_2) {
 		waitForElementVisible(UserCheckOutPageUI.BILLING_ADDRESS_2_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.BILLING_ADDRESS_2_TEXTBOX, address_2);
+		sendkeyToElement(UserCheckOutPageUI.BILLING_ADDRESS_2_TEXTBOX, address_2);
 	}
 
 	public void inputToBillingZipPostalCodeTextbox(String zipPostalCode) {
 		waitForElementVisible(UserCheckOutPageUI.BILLING_ZIP_POSTAL_CODE_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.BILLING_ZIP_POSTAL_CODE_TEXTBOX, zipPostalCode);
+		sendkeyToElement(UserCheckOutPageUI.BILLING_ZIP_POSTAL_CODE_TEXTBOX, zipPostalCode);
 	}
 
 	public void inputToBillingPhoneNumberTextbox(String phoneNumber) {
 		waitForElementVisible(UserCheckOutPageUI.BILLING_PHONE_NUMBER_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.BILLING_PHONE_NUMBER_TEXTBOX, phoneNumber);
+		sendkeyToElement(UserCheckOutPageUI.BILLING_PHONE_NUMBER_TEXTBOX, phoneNumber);
 	}
 
 	public void inputToBillingFaxNumberTextbox(String faxNumber) {
 		waitForElementVisible(UserCheckOutPageUI.BILLING_FAX_NUMBER_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.BILLING_FAX_NUMBER_TEXTBOX, faxNumber);
+		sendkeyToElement(UserCheckOutPageUI.BILLING_FAX_NUMBER_TEXTBOX, faxNumber);
 	}
 
 	public void clickToSaveButton() {
@@ -111,22 +111,22 @@ public class UserCheckOutPageObject extends BasePage {
 
 	public void inputToShippingFirstNameTextbox(String firstName) {
 		waitForElementVisible(UserCheckOutPageUI.SHIPPING_FIRST_NAME_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.SHIPPING_FIRST_NAME_TEXTBOX, firstName);
+		sendkeyToElement(UserCheckOutPageUI.SHIPPING_FIRST_NAME_TEXTBOX, firstName);
 	}
 
 	public void inputToShippingLastNameTextbox(String lastName) {
 		waitForElementVisible(UserCheckOutPageUI.SHIPPING_LAST_NAME_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.SHIPPING_LAST_NAME_TEXTBOX, lastName);
+		sendkeyToElement(UserCheckOutPageUI.SHIPPING_LAST_NAME_TEXTBOX, lastName);
 	}
 
 	public void inPutToShippingEmailTextbox(String emailAddress) {
 		waitForElementVisible(UserCheckOutPageUI.SHIPPING_EMAIL_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.SHIPPING_EMAIL_TEXTBOX, emailAddress);
+		sendkeyToElement(UserCheckOutPageUI.SHIPPING_EMAIL_TEXTBOX, emailAddress);
 	}
 
 	public void inputToShippingCompanyNameTextbox(String companyName) {
 		waitForElementVisible(UserCheckOutPageUI.SHIPPING_COMPANY_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.SHIPPING_COMPANY_TEXTBOX, companyName);
+		sendkeyToElement(UserCheckOutPageUI.SHIPPING_COMPANY_TEXTBOX, companyName);
 	}
 
 	public void selectToShippingCountryDropdownByText(String country) {
@@ -136,32 +136,32 @@ public class UserCheckOutPageObject extends BasePage {
 
 	public void inputToShippingCityTextbox(String city) {
 		waitForElementVisible(UserCheckOutPageUI.SHIPPING_CITY_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.SHIPPING_CITY_TEXTBOX, city);
+		sendkeyToElement(UserCheckOutPageUI.SHIPPING_CITY_TEXTBOX, city);
 	}
 
 	public void inputToShippingAddress1Textbox(String address_1) {
 		waitForElementVisible(UserCheckOutPageUI.SHIPPING_ADDRESS_1_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.SHIPPING_ADDRESS_1_TEXTBOX, address_1);
+		sendkeyToElement(UserCheckOutPageUI.SHIPPING_ADDRESS_1_TEXTBOX, address_1);
 	}
 
 	public void inputToShippingAddress2Textbox(String address_2) {
 		waitForElementVisible(UserCheckOutPageUI.SHIPPING_ADDRESS_2_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.SHIPPING_ADDRESS_2_TEXTBOX, address_2);
+		sendkeyToElement(UserCheckOutPageUI.SHIPPING_ADDRESS_2_TEXTBOX, address_2);
 	}
 
 	public void inputToShippingZipPostalCodeTextbox(String zipPostalCode) {
 		waitForElementVisible(UserCheckOutPageUI.SHIPPING_ZIP_POSTAL_CODE_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.SHIPPING_ZIP_POSTAL_CODE_TEXTBOX, zipPostalCode);
+		sendkeyToElement(UserCheckOutPageUI.SHIPPING_ZIP_POSTAL_CODE_TEXTBOX, zipPostalCode);
 	}
 
 	public void inputToShippingPhoneNumberTextbox(String phoneNumber) {
 		waitForElementVisible(UserCheckOutPageUI.SHIPPING_PHONE_NUMBER_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.SHIPPING_PHONE_NUMBER_TEXTBOX, phoneNumber);
+		sendkeyToElement(UserCheckOutPageUI.SHIPPING_PHONE_NUMBER_TEXTBOX, phoneNumber);
 	}
 
 	public void inputToShippingFaxNumberTextbox(String faxNumber) {
 		waitForElementVisible(UserCheckOutPageUI.SHIPPING_FAX_NUMBER_TEXTBOX);
-		senkeyToElement(UserCheckOutPageUI.SHIPPING_FAX_NUMBER_TEXTBOX, faxNumber);
+		sendkeyToElement(UserCheckOutPageUI.SHIPPING_FAX_NUMBER_TEXTBOX, faxNumber);
 	}
 
 	public void checkToRadioButtonByTextLabel(String label) {
@@ -312,7 +312,7 @@ public class UserCheckOutPageObject extends BasePage {
 
 	public void inPutToTextboxByLabeName(String label, String cardHolderName) {
 		waitForElementVisible(UserCheckOutPageUI.CREDIT_CARD_TEXTBOX_BY_TEXT_LABEL, label);
-		senkeyToElement(UserCheckOutPageUI.CREDIT_CARD_TEXTBOX_BY_TEXT_LABEL, cardHolderName, label);
+		sendkeyToElement(UserCheckOutPageUI.CREDIT_CARD_TEXTBOX_BY_TEXT_LABEL, cardHolderName, label);
 	}
 
 	public void selectItemInExpireMonthDropdownByText(String expireMonth) {

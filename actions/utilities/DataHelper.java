@@ -3,6 +3,7 @@ package utilities;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Random;
+import java.util.regex.Pattern;
 
 import com.github.javafaker.Faker;
 
@@ -23,7 +24,32 @@ public class DataHelper {
 	}
 
 	public String getFullname() {
-		return faker.name().fullName();
+		String fullName = faker.name().fullName();
+		return removeSpecialCharacters(removePrefix(fullName));
+	}
+
+	/**
+	 * Remove common prefixes from a full name.
+	 *
+	 * @param fullName The full name with potential prefixes.
+	 * @return The cleaned name with prefixes removed.
+	 */
+	public static String removePrefix(String fullName) {
+		String[] prefixes = { "Dr.", "Mr.", "Mrs.", "Ms.", "Prof.", "Professor", "Rev.", "Reverend", "Hon.", "Honorable" };
+
+		// Remove prefix if the name starts with any prefix in the list
+		for (String prefix : prefixes) {
+			if (fullName.startsWith(prefix)) {
+				return fullName.replaceFirst("^" + prefix + "\\s*", "");
+			}
+		}
+		return fullName;
+	}
+
+	public static String removeSpecialCharacters(String input) {
+		String regex = "[^a-zA-Z0-9 ]";
+		Pattern pattern = Pattern.compile(regex);
+		return pattern.matcher(input).replaceAll("");
 	}
 
 	public String getGenderMaleAndFemale() {
@@ -46,7 +72,14 @@ public class DataHelper {
 	}
 
 	public String getPhone() {
-		return faker.phoneNumber().phoneNumber();
+		String phoneNumber = faker.phoneNumber().phoneNumber();
+		// Loại bỏ các kí tự không phải là chữ số
+		String cleanedPhoneNumber = phoneNumber.replaceAll("\\D", "");
+
+		// Giữ lại 10 chữ số đầu tiên
+		String finalPhoneNumber = cleanedPhoneNumber.substring(0, Math.min(cleanedPhoneNumber.length(), 10));
+
+		return String.format("%s%s%s", finalPhoneNumber.substring(0, 3), finalPhoneNumber.substring(3, 6), finalPhoneNumber.substring(6));
 	}
 
 	public String getAddress() {
@@ -59,6 +92,12 @@ public class DataHelper {
 
 	public String getZipCode() {
 		return faker.address().zipCodeByState(faker.address().state());
+	}
+
+	public String getPINCode() {
+		Random random = new Random();
+		int randomNumber = 100000 + random.nextInt(900000);
+		return String.valueOf(randomNumber);
 	}
 
 	public String getZipCodeByState() {
@@ -77,8 +116,18 @@ public class DataHelper {
 		return faker.business().creditCardNumber();
 	}
 
-	public String getBirthDay() {
-		return new SimpleDateFormat("MM/dd/yyyy").format(faker.date().birthday());
+	/**
+	 * Date Format Characters:<br>
+	 * One letter : - d: Day of the month (1-31) - M: Month of the year (1-12) <br>
+	 * Two letters : - dd: Day of the month (01-31) - MM: Month of the year (December 1) - yy: Year with two digits (00-99) <br>
+	 * Three letters: - MMM: Month of the year (abbreviated)(Dec) - EEE: Day of the week (abbreviated)(Sun) <br>
+	 * Four letters : - MMMM: Month of the year (full) - EEEE: Day of the week (full)(Monday) - yyyy: Year with four digits (e.g., 2023) <br>
+	 * 
+	 * @param fomartDate : e.g. MM/dd/yyyy
+	 * @return
+	 */
+	public String getBirthDay(String fomartDate) {
+		return new SimpleDateFormat(fomartDate).format(faker.date().birthday());
 	}
 
 	private String transferMonthNumberToChacraceter(String monthNumberString) {
@@ -114,16 +163,16 @@ public class DataHelper {
 	}
 
 	public String getTimeDay() {
-		String day = getBirthDay().split("/", 3)[1];
+		String day = getBirthDay("MM/dd/yyyy").split("/", 3)[1];
 		return day.startsWith("0") ? day.substring(1) : day;
 	}
 
 	public String getTimeMonthChacrater() {
-		return transferMonthNumberToChacraceter(getBirthDay().split("/", 3)[0]);
+		return transferMonthNumberToChacraceter(getBirthDay("MM/dd/yyyy").split("/", 3)[0]);
 	}
 
 	public String getTimeYear() {
-		return getBirthDay().split("/", 3)[2];
+		return getBirthDay("MM/dd/yyyy").split("/", 3)[2];
 	}
 
 }

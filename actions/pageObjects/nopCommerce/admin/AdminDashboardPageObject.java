@@ -38,12 +38,12 @@ public class AdminDashboardPageObject extends BasePage {
 
 	public void inputToProductNameTextbox(String productName) {
 		waitForElementVisible(AdminDashboardPageUI.PRODUCT_NAME_TEXTBOX);
-		senkeyToElement(AdminDashboardPageUI.PRODUCT_NAME_TEXTBOX, productName);
+		sendkeyToElement(AdminDashboardPageUI.PRODUCT_NAME_TEXTBOX, productName);
 	}
 
 	public void inputToGoDirectlySKUTextbox(String skuName) {
 		waitForElementVisible(AdminDashboardPageUI.PRODUCT_GO_DIRECTLY_TO_SKU_TEXTBOX);
-		senkeyToElement(AdminDashboardPageUI.PRODUCT_GO_DIRECTLY_TO_SKU_TEXTBOX, skuName);
+		sendkeyToElement(AdminDashboardPageUI.PRODUCT_GO_DIRECTLY_TO_SKU_TEXTBOX, skuName);
 	}
 
 	public void clickToProductSearchButton() {
@@ -110,7 +110,7 @@ public class AdminDashboardPageObject extends BasePage {
 
 	public void inPutToCustomerAreaTextboxByLabel(String label, String text) {
 		waitForElementVisible(AdminDashboardPageUI.CUSTOMER_TEXTBOX_BY_TEXT_LABEL, label);
-		senkeyToElement(AdminDashboardPageUI.CUSTOMER_TEXTBOX_BY_TEXT_LABEL, text, label);
+		sendkeyToElement(AdminDashboardPageUI.CUSTOMER_TEXTBOX_BY_TEXT_LABEL, text, label);
 	}
 
 	public void selectGenderRadioButtonByLabel(String label) {
@@ -133,7 +133,7 @@ public class AdminDashboardPageObject extends BasePage {
 
 	public void inPutTAdminCommentTextbox(String text) {
 		waitForElementVisible(AdminDashboardPageUI.CUSTOMER_ADMIN_COMMENT_TEXTBOX);
-		senkeyToElementUserClearByDeleteKey(AdminDashboardPageUI.CUSTOMER_ADMIN_COMMENT_TEXTBOX, text);
+		sendkeyToElementUserClearByDeleteKey(AdminDashboardPageUI.CUSTOMER_ADMIN_COMMENT_TEXTBOX, text);
 	}
 
 	public void clickToSaveAndContinueEditButton() {
@@ -236,7 +236,7 @@ public class AdminDashboardPageObject extends BasePage {
 
 	public void inPutToAddressTextboxByLabel(String label, String text) {
 		waitForElementVisible(AdminDashboardPageUI.ADDRESS_TEXTBOX_BY_TEXT_LABEL, label);
-		senkeyToElement(AdminDashboardPageUI.ADDRESS_TEXTBOX_BY_TEXT_LABEL, text, label);
+		sendkeyToElement(AdminDashboardPageUI.ADDRESS_TEXTBOX_BY_TEXT_LABEL, text, label);
 	}
 
 	public void selectItemToAddressCountryDropdown(String country) {

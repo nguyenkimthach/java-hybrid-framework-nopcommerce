@@ -16,12 +16,12 @@ public class AdminLoginPageObject extends BasePage {
 
 	public void inPutToEmailTextbox(String emailAddress) {
 		waitForElementVisible(AdminLoginPageUI.EMAIL_TEXTBOX);
-		senkeyToElement(AdminLoginPageUI.EMAIL_TEXTBOX, emailAddress);
+		sendkeyToElement(AdminLoginPageUI.EMAIL_TEXTBOX, emailAddress);
 	}
 
 	public void inPutToPasswordTextbox(String password) {
 		waitForElementVisible(AdminLoginPageUI.PASSWORD_TEXTBOX);
-		senkeyToElement(AdminLoginPageUI.PASSWORD_TEXTBOX, password);
+		sendkeyToElement(AdminLoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 
 	public void selectRememberCheckbox() {

@@ -46,12 +46,12 @@ public class UserProductReviewPageObject extends BasePage {
 
 	public void inputToReviewTitleTextbox(String textTitle) {
 		waitForElementVisible(UserProductReviewPageUI.REVIEW_TITLE);
-		senkeyToElement(UserProductReviewPageUI.REVIEW_TITLE, textTitle);
+		sendkeyToElement(UserProductReviewPageUI.REVIEW_TITLE, textTitle);
 	}
 
 	public void inputToReviewTextTextbox(String textReview) {
 		waitForElementVisible(UserProductReviewPageUI.REVIEW_TEXT);
-		senkeyToElement(UserProductReviewPageUI.REVIEW_TEXT, textReview);
+		sendkeyToElement(UserProductReviewPageUI.REVIEW_TEXT, textReview);
 	}
 
 	public void checkToRattingCheckboxByValue(String ratingPoint) {

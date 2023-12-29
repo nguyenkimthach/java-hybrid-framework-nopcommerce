@@ -47,6 +47,6 @@ public class UserProductPageObject extends BasePage {
 
 	public void inputToQtyTextbox(String qty) {
 		waitForElementVisible(UserProductPageUI.QTY_PRODUCT_TEXTBOX);
-		senkeyToElement(UserProductPageUI.QTY_PRODUCT_TEXTBOX, qty);
+		sendkeyToElement(UserProductPageUI.QTY_PRODUCT_TEXTBOX, qty);
 	}
 }

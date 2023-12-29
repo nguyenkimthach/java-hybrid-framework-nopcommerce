@@ -21,12 +21,12 @@ public class UserMyAccountPageObject extends BasePage {
 
 	public void inputToFirstNameTextbox(String firstName) {
 		waitForElementVisible(UserMyAccountPageUI.FIRST_NAME_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.FIRST_NAME_TEXTBOX, firstName);
+		sendkeyToElement(UserMyAccountPageUI.FIRST_NAME_TEXTBOX, firstName);
 	}
 
 	public void inputToLastNameTextbox(String lastName) {
 		waitForElementVisible(UserMyAccountPageUI.LAST_NAME_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.LAST_NAME_TEXTBOX, lastName);
+		sendkeyToElement(UserMyAccountPageUI.LAST_NAME_TEXTBOX, lastName);
 	}
 
 	public void selectItemInDayDropdown(String day) {
@@ -46,12 +46,12 @@ public class UserMyAccountPageObject extends BasePage {
 
 	public void inPutToEmailTextbox(String emailAddress) {
 		waitForElementVisible(UserMyAccountPageUI.EMAIL_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.EMAIL_TEXTBOX, emailAddress);
+		sendkeyToElement(UserMyAccountPageUI.EMAIL_TEXTBOX, emailAddress);
 	}
 
 	public void inputToCompanyNameTextbox(String companyName) {
 		waitForElementVisible(UserMyAccountPageUI.COMPANY_NAME_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.COMPANY_NAME_TEXTBOX, companyName);
+		sendkeyToElement(UserMyAccountPageUI.COMPANY_NAME_TEXTBOX, companyName);
 	}
 
 	public void clickToSaveInforButton() {
@@ -76,22 +76,22 @@ public class UserMyAccountPageObject extends BasePage {
 
 	public void inputToAddressFirstNameTextbox(String firstName) {
 		waitForElementVisible(UserMyAccountPageUI.ADDRESS_FIRST_NAME_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.ADDRESS_FIRST_NAME_TEXTBOX, firstName);
+		sendkeyToElement(UserMyAccountPageUI.ADDRESS_FIRST_NAME_TEXTBOX, firstName);
 	}
 
 	public void inputToAddressLastNameTextbox(String lastName) {
 		waitForElementVisible(UserMyAccountPageUI.ADDRESS_LAST_NAME_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.ADDRESS_LAST_NAME_TEXTBOX, lastName);
+		sendkeyToElement(UserMyAccountPageUI.ADDRESS_LAST_NAME_TEXTBOX, lastName);
 	}
 
 	public void inPutToAddressEmailTextbox(String emailAddress) {
 		waitForElementVisible(UserMyAccountPageUI.ADDRESS_EMAIL_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.ADDRESS_EMAIL_TEXTBOX, emailAddress);
+		sendkeyToElement(UserMyAccountPageUI.ADDRESS_EMAIL_TEXTBOX, emailAddress);
 	}
 
 	public void inputToAddressCompanyNameTextbox(String companyName) {
 		waitForElementVisible(UserMyAccountPageUI.ADDRESS_COMPANY_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.ADDRESS_COMPANY_TEXTBOX, companyName);
+		sendkeyToElement(UserMyAccountPageUI.ADDRESS_COMPANY_TEXTBOX, companyName);
 	}
 
 	public void selectAddressCountryDropdownByText(String country) {
@@ -101,32 +101,32 @@ public class UserMyAccountPageObject extends BasePage {
 
 	public void inputToAddressCityTextbox(String city) {
 		waitForElementVisible(UserMyAccountPageUI.ADDRESS_CITY_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.ADDRESS_CITY_TEXTBOX, city);
+		sendkeyToElement(UserMyAccountPageUI.ADDRESS_CITY_TEXTBOX, city);
 	}
 
 	public void inputToAddress1Textbox(String address_1) {
 		waitForElementVisible(UserMyAccountPageUI.ADDRESS_ADDRESS_1_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.ADDRESS_ADDRESS_1_TEXTBOX, address_1);
+		sendkeyToElement(UserMyAccountPageUI.ADDRESS_ADDRESS_1_TEXTBOX, address_1);
 	}
 
 	public void inputToAddress2Textbox(String address_2) {
 		waitForElementVisible(UserMyAccountPageUI.ADDRESS_ADDRESS_2_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.ADDRESS_ADDRESS_2_TEXTBOX, address_2);
+		sendkeyToElement(UserMyAccountPageUI.ADDRESS_ADDRESS_2_TEXTBOX, address_2);
 	}
 
 	public void inputToAddressZipPostalCodeTextbox(String zipPostalCode) {
 		waitForElementVisible(UserMyAccountPageUI.ADDRESS_ZIP_POSTAL_CODE_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.ADDRESS_ZIP_POSTAL_CODE_TEXTBOX, zipPostalCode);
+		sendkeyToElement(UserMyAccountPageUI.ADDRESS_ZIP_POSTAL_CODE_TEXTBOX, zipPostalCode);
 	}
 
 	public void inputToAddressPhoneNumberTextbox(String phoneNumber) {
 		waitForElementVisible(UserMyAccountPageUI.ADDRESS_PHONE_NUMBER_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.ADDRESS_PHONE_NUMBER_TEXTBOX, phoneNumber);
+		sendkeyToElement(UserMyAccountPageUI.ADDRESS_PHONE_NUMBER_TEXTBOX, phoneNumber);
 	}
 
 	public void inputToAddressFaxNumberTextbox(String faxNumber) {
 		waitForElementVisible(UserMyAccountPageUI.ADDRESS_FAX_NUMBER_TEXTBOX);
-		senkeyToElement(UserMyAccountPageUI.ADDRESS_FAX_NUMBER_TEXTBOX, faxNumber);
+		sendkeyToElement(UserMyAccountPageUI.ADDRESS_FAX_NUMBER_TEXTBOX, faxNumber);
 	}
 
 	public void clickToSaveButton() {
@@ -136,17 +136,17 @@ public class UserMyAccountPageObject extends BasePage {
 
 	public void inPutToOldPasswordTextbox(String oldPassword) {
 		waitForElementVisible(UserMyAccountPageUI.CHANGE_PASS_OLD_PASSWORD);
-		senkeyToElement(UserMyAccountPageUI.CHANGE_PASS_OLD_PASSWORD, oldPassword);
+		sendkeyToElement(UserMyAccountPageUI.CHANGE_PASS_OLD_PASSWORD, oldPassword);
 	}
 
 	public void inPutToNewPasswordTextbox(String newPassword) {
 		waitForElementVisible(UserMyAccountPageUI.CHANGE_PASS_NEW_PASSWORD);
-		senkeyToElement(UserMyAccountPageUI.CHANGE_PASS_NEW_PASSWORD, newPassword);
+		sendkeyToElement(UserMyAccountPageUI.CHANGE_PASS_NEW_PASSWORD, newPassword);
 	}
 
 	public void inPutToConfirmNewPasswordTextbox(String confirmNewPassword) {
 		waitForElementVisible(UserMyAccountPageUI.CHANGE_PASS_CONFIRM_NEW_PASSWORD);
-		senkeyToElement(UserMyAccountPageUI.CHANGE_PASS_CONFIRM_NEW_PASSWORD, confirmNewPassword);
+		sendkeyToElement(UserMyAccountPageUI.CHANGE_PASS_CONFIRM_NEW_PASSWORD, confirmNewPassword);
 	}
 
 	public void clickToChangePasswordButton() {

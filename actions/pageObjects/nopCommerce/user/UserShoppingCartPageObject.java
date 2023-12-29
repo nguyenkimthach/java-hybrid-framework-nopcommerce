@@ -68,7 +68,7 @@ public class UserShoppingCartPageObject extends BasePage {
 
 	public void inputToQtyTextboxByProductName(String productName, String atribute, String qty) {
 		waitForElementVisible(UserShoppingCartPageUI.ITEM_BY_PRODUCT_NAME_AND_ATRIBUTE, productName, atribute);
-		senkeyToElement(UserShoppingCartPageUI.ITEM_BY_PRODUCT_NAME_AND_ATRIBUTE, qty, productName, atribute);
+		sendkeyToElement(UserShoppingCartPageUI.ITEM_BY_PRODUCT_NAME_AND_ATRIBUTE, qty, productName, atribute);
 	}
 
 	public void clickToUpdateShoppingCartButton() {

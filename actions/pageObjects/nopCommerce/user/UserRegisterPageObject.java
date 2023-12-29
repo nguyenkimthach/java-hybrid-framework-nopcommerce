@@ -51,12 +51,12 @@ public class UserRegisterPageObject extends BasePage {
 
 	public void inputToFirstNameTextbox(String firstname) {
 		waitForElementVisible(UserRegisterPageUI.FIRST_NAME_TEXTBOX);
-		senkeyToElement(UserRegisterPageUI.FIRST_NAME_TEXTBOX, firstname);
+		sendkeyToElement(UserRegisterPageUI.FIRST_NAME_TEXTBOX, firstname);
 	}
 
 	public void inputToLastNameTextbox(String lastname) {
 		waitForElementVisible(UserRegisterPageUI.LAST_NAME_TEXTBOX);
-		senkeyToElement(UserRegisterPageUI.LAST_NAME_TEXTBOX, lastname);
+		sendkeyToElement(UserRegisterPageUI.LAST_NAME_TEXTBOX, lastname);
 	}
 
 	public void selectItemInDayDropdown(String day) {
@@ -76,22 +76,22 @@ public class UserRegisterPageObject extends BasePage {
 
 	public void inPutToEmailTextbox(String emailAddress) {
 		waitForElementVisible(UserRegisterPageUI.EMAIL_TEXTBOX);
-		senkeyToElement(UserRegisterPageUI.EMAIL_TEXTBOX, emailAddress);
+		sendkeyToElement(UserRegisterPageUI.EMAIL_TEXTBOX, emailAddress);
 	}
 
 	public void inputToCompanyNameTextbox(String companyName) {
 		waitForElementVisible(UserRegisterPageUI.COMPANY_NAME_TEXTBOX);
-		senkeyToElement(UserRegisterPageUI.COMPANY_NAME_TEXTBOX, companyName);
+		sendkeyToElement(UserRegisterPageUI.COMPANY_NAME_TEXTBOX, companyName);
 	}
 
 	public void inPutToPasswordTextbox(String password) {
 		waitForElementVisible(UserRegisterPageUI.PASSWORD_TEXTBOX);
-		senkeyToElement(UserRegisterPageUI.PASSWORD_TEXTBOX, password);
+		sendkeyToElement(UserRegisterPageUI.PASSWORD_TEXTBOX, password);
 	}
 
 	public void inPutToConfirmPasswordTextbox(String confirmPassword) {
 		waitForElementVisible(UserRegisterPageUI.CONFIRM_PASSWORD);
-		senkeyToElement(UserRegisterPageUI.CONFIRM_PASSWORD, confirmPassword);
+		sendkeyToElement(UserRegisterPageUI.CONFIRM_PASSWORD, confirmPassword);
 	}
 
 	public boolean isRegisterSuccessMessageDisplayed(String message) {
