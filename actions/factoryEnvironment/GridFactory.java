@@ -36,7 +36,7 @@ public class GridFactory {
 			platform = Platform.MAC;
 		}
 
-		switch (browserName) {
+		switch (browserName.toLowerCase()) {
 		case "firefox":
 			capability = DesiredCapabilities.firefox();
 			capability.setBrowserName("firefox");

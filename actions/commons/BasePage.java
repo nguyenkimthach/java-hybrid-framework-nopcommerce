@@ -493,9 +493,9 @@ public class BasePage {
 	 * @throws IllegalArgumentException If the provided time is negative.
 	 * @author ThachNk
 	 */
-	protected void sleepInSecond(long timeInSecond) {
+	protected void sleepInSecond(double d) {
 		try {
-			Thread.sleep(timeInSecond * 1000);
+			Thread.sleep((long) (d * 1000));
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -904,7 +904,7 @@ public class BasePage {
 		WebElement element = getWebElement(locatorType);
 		String originalStyle = element.getAttribute("style");
 		((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", "border: 2px solid red; border-style: dashed;");
-		sleepInSecond(1);
+		sleepInSecond(0.3);
 		((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", originalStyle);
 	}
 
@@ -920,7 +920,7 @@ public class BasePage {
 		WebElement element = getWebElement(getDynamicXpath(locatorType, dynamicValues));
 		String originalStyle = element.getAttribute("style");
 		((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", "border: 2px solid red; border-style: dashed;");
-		sleepInSecond(1);
+		sleepInSecond(0.3);
 		((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", originalStyle);
 	}
 
